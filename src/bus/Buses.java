@@ -99,7 +99,7 @@ public class Buses{
                         double fare[]={0, 420, 420, 420, 420, 420, 420};
 
                         //convert int to str.
-                        ticketS[z][1]=dest[0];
+                        ticketS[z][1]=dest[to];
                         ticketD[z][0]=fare[to];
 
 
@@ -132,7 +132,7 @@ public class Buses{
                             }
                         }
 
-                        ticketI[z][1]=0;
+                        //ticketI[z][1]=0;
                         ////
                         if(print == 1){
                             System.out.println("Paseemger Details");
