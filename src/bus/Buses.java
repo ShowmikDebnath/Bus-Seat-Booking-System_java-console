@@ -1,6 +1,5 @@
 package bus;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,155 +12,224 @@ public class Buses{
         Buses.info();
     }
 
+
     public static void info() throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        Scanner input = new Scanner(System.in);
 
-        String user, pass, yn, search, again, choice;
-        int to=0, y=1, z=0, end=0, r=1;
-
-        int available[] = new int[7];
-        int ticketI[][] = new int[100][3];
-        String ticketS[][] = new String[100][3];
-        double ticketD[][] = new double[100][3];
-
-        for(int i=1; i<=6; i++){
-            available[i] = 30;
-        }
-
-        for(int x=1; x==1; ){
-            System.out.println("1. Destination");
-            System.out.println("2. Pessenger");
-            System.out.println("3. Billing Details");
-            System.out.println("4. Exit");
-
-            for(x=1; x==1; ){
-                System.out.println("Enter your Choice: ");
-                choice = in.readLine();
-
-                if(choice.equals("1")){
-                    int print = 1;
-
-                    System.out.println("\t   Root      \t\t\tPrice\t\t\tAvailable sit");
-                    System.out.println("1. Dhaka-Sylhet        \t\t\t420\t\t\t"+available[1]);
-                    System.out.println("2. Sylhet-Dhaka        \t\t\t420\t\t\t"+available[2]);
-                    System.out.println("3. Chattagram-Sylhet   \t\t\t420\t\t\t"+available[3]);
-                    System.out.println("4. Sylhet-Chattagram   \t\t\t420\t\t\t"+available[4]);
-                    System.out.println("5. Dhaka-Chattagram    \t\t\t420\t\t\t"+available[5]);
-                    System.out.println("6. Chattagram-Dhaka    \t\t\t420\t\t\t"+available[6]);
-
-
-                    if((available[1]==0) && (available[2]==0) && (available[3]==0) && (available[4]==0) && (available[5]==0) && (available[6]==0)){
-                        System.out.println("Sorry, We don't have available seats for all Destination!");
-                        x=0;
-                    }
-
-                    else{
-                        for(x=1; x==1; ){
-                            System.out.println("Enter Passenger Name: ");
-                            ticketS[z][0]=in.readLine();
-
-                            x=0;
-
-                            for(int l=0; l<z; l++){
-                                if(ticketS[l][0].equalsIgnoreCase(ticketS[z][0])){
-                                    System.out.println("Soory, Passenger name have already used!");
-                                    x=1;
-                                }
-                            }
-                        }
-
-                        // INPUT FOR DESTINATION
-
-                        for(x=1; x==1; ){
-                            System.out.println("Enter Destination Number: ");
-                            to=Integer.parseInt(in.readLine());
-
-                            if(to<1 || to>6){
-                                System.out.println("Invalid Input!");
-                                x=1;
-                            }
-
-                            // IF AVAILAVLE SEAT IS ZERO
-
-                            for(int d=1; d<=5; d++){
-                                if(to==d){
-                                    if(available[to]==0){
-                                        System.out.println("Sorry, we don't have avaiable seat!");
-                                        x=1;
-                                    }
-                                    x=0;
-                                }
-                            }
-                        }
-
-                        String dest[]={" ", "Dhaka-Sylhet", "Sylhet-Dhaka", "Chattagram-Sylhet", "Sylhet-Chattagram", "Dhaka-Chattagram", "Chattagram-Dhaka"};
-                        double fare[]={0, 420, 420, 420, 420, 420, 420};
-
-                        //convert int to str.
-                        ticketS[z][1]=dest[to];
-                        ticketD[z][0]=fare[to];
-
-
-                        //input passenger number
-
-                        for(x=1; x==1; ){
-                            System.out.println("How many passenger are you: ");
-                            ticketI[z][0]=Integer.parseInt(in.readLine());
-
-
-                            //Substact the availavle sit number
-                            for(int p=1; p<=5; p++){
-                                if(to==p){
-                                    print=1;
-                                    available[to]=available[to]-ticketI[z][0];
-
-                                    // IF THE SUBSTACTED AVAILAVLE SEAT IS  "<0", DISPLAY ERROR
-
-                                    if(available[to]<0){
-                                        System.out.println("Sorry, we don't have seat available for "+ticketI[z][0]+" persions");
-                                        available[to] = available[to]+ticketI[z][0];
-                                        System.out.println("We only have "+available[to]+" seat available");
-                                        x=1;
-                                        print=0;
-                                    }
-                                    else{
-                                        x=0;
-                                    }
-                                }
-                            }
-                        }
-
-                        //ticketI[z][1]=0;
-                        ////
-                        if(print == 1){
-                            System.out.println("Paseemger Details");
-                            System.out.println("Passenger Name: "+ticketS[z][0]);
-                            System.out.println("Passenger Destination: "+ticketS[z][1]);
-                            System.out.println("Fare : "+ticketD[z][0]);
-                            System.out.println("No of Passenger : "+ticketI[z][0]);
-
-                            double discout = (ticketD[z][0]-(ticketD[z][0]*0.2))*ticketI[z][1];
-                            ticketD[z][2]=(ticketI[z][0]-ticketI[z][1])*ticketD[z][0]+discout;
-                            x=0;
-                            System.out.println("Total Fare: "+ticketD[z][2]);
-                        }
-                        z++;
-                    }
-
-                }
-
-
-            }
-        }
-
-
-
-
-
+        int available1 = 30, available2 = 30, available3 =30, available4 = 30, available5 = 30, available6 = 30;
+        Buses.booking(available1, available2, available3, available4, available5, available6);
 
     }
 
+    public static void booking(int available1, int available2, int available3, int available4, int available5, int available6) throws IOException {
+        Scanner input = new Scanner(System.in);
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+
+        System.out.println("\t   Root      \t\t\tPrice\t\t\tAvailable sit");
+        System.out.println("1. Dhaka-Sylhet        \t\t\t420\t\t\t"+available1);
+        System.out.println("2. Sylhet-Dhaka        \t\t\t420\t\t\t"+available2);
+        System.out.println("3. Chattagram-Sylhet   \t\t\t420\t\t\t"+available3);
+        System.out.println("4. Sylhet-Chattagram   \t\t\t420\t\t\t"+available4);
+        System.out.println("5. Dhaka-Chattagram    \t\t\t420\t\t\t"+available5);
+        System.out.println("6. Chattagram-Dhaka    \t\t\t420\t\t\t"+available6);
+        System.out.println("7. Exit");
+
+        System.out.println("Enter your Destination : ");
+        int n=input.nextInt();
+
+
+        int number;
+        int pessNum;
+        if(n==1){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available1){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Dhaka-Sylhet");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available1 = available1-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available1+ " Seat");
+            }
+        }
+        else if(n==2){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available2){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Sylhet-Dhaka");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available2 = available2-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available2+ " Seat");
+            }
+        }
+        else if(n==3){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available3){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Chattagram-Sylhet");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available3 = available3-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available3+ " Seat");
+            }
+
+        }
+        else if(n==4){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available4){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Sylhet-Chattagram");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available4 = available4-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available4+ " Seat");
+            }
+        }
+        else if(n==5){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available5){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Dhaka-Chattagram");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available5 = available5-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available5+ " Seat");
+            }
+        }
+        else if(n==6){
+            System.out.println("Enter your Name: ");
+            String name = in.readLine();
+            System.out.println("Enter your Mobile number: ");
+            number = input.nextInt();
+            System.out.println("How Many pessenger are you?: ");
+            pessNum=input.nextInt();
+
+            if(pessNum<=available6){
+                System.out.println("Pessenger details");
+                System.out.println("Pessenger Name: "+name);
+                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Destination: Chattagram-Dhaka");
+                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Fare: 420");
+                System.out.println("Total Fare: "+(pessNum*420));
+
+                System.out.println("Are you confirm your ticket (Y/N): ");
+                String ch = in.readLine();
+
+                if(ch.equals("Y")){
+                    available6 = available6-pessNum;
+                    //System.out.println("******"+available1);
+                    Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
+                }
+            }
+            else{
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available6+ " Seat");
+            }
+        }
+        else if(n==7){
+            return;
+        }
+        else{
+            System.out.println("Please Enter valid Number(1-7): ");
+            Buses.booking(available1, available2, available3, available4 ,available5, available6);
+        }
+    }
+    
 
 
 }

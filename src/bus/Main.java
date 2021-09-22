@@ -18,7 +18,8 @@ public class Main {
         String pass = input.nextLine();
 
         if ((username.equals("1") && pass.equals("1"))) {
-            Buses buses = new Buses();
+            //Buses buses = new Buses();
+            Menu menu = new Menu();
         }
 
 
