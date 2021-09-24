@@ -15,6 +15,7 @@ public class Buses{
 
     public static void info() throws IOException {
 
+        // AVAILABLE SEAT NUMBER DECLARATION
         int available1 = 30, available2 = 30, available3 =30, available4 = 30, available5 = 30, available6 = 30;
         Buses.booking(available1, available2, available3, available4, available5, available6);
 
@@ -24,7 +25,8 @@ public class Buses{
         Scanner input = new Scanner(System.in);
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-
+        // SHOW ROOT, PRICE AND AVVAILABLE SEAT INFO
+        System.out.println();
         System.out.println("\t   Root      \t\t\tPrice\t\t\tAvailable sit");
         System.out.println("1. Dhaka-Sylhet        \t\t\t420\t\t\t"+available1);
         System.out.println("2. Sylhet-Dhaka        \t\t\t420\t\t\t"+available2);
@@ -34,21 +36,24 @@ public class Buses{
         System.out.println("6. Chattagram-Dhaka    \t\t\t420\t\t\t"+available6);
         System.out.println("7. Exit");
 
-        System.out.println("Enter your Destination : ");
+        System.out.print("\nEnter your Destination : ");
         int n=input.nextInt();
 
 
+        // CHOOSE A ROOT, TAKE REQUIRED INFO
+        System.out.println();
         int number;
         int pessNum;
         if(n==1){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
-            if(pessNum<=available1){
+            System.out.println();
+            if(pessNum<=available1){ // SEAT AVAILABLE CHECK
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
                 System.out.println("Pessenger Mobile Number: "+number);
@@ -57,27 +62,30 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+                System.out.print("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
-                    available1 = available1-pessNum;
+                    available1 = available1-pessNum; // SEAT INFO UPDATED
                     //System.out.println("******"+available1);
+                    // CALL PAYMENT CLASS
                     Payment payment = new Payment(name, "Dhaka to Sylhet", 420, pessNum, (pessNum*420), available1, available2, available3, available4, available5, available6);
                 }
             }
             else{
-                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available1+ " Seat");
+                System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available1+ " Seat"); // SHOW MASSAGE IF SEAT ARE NOT AVAILABLE
             }
         }
+        // SAME WORK AS CHOOSE 1, FOR 2-6)
         else if(n==2){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
+            System.out.println();
             if(pessNum<=available2){
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
@@ -87,7 +95,7 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+                System.out.print("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
@@ -101,13 +109,14 @@ public class Buses{
             }
         }
         else if(n==3){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
+            System.out.println();
             if(pessNum<=available3){
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
@@ -117,7 +126,7 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+                System.out.println("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
@@ -132,13 +141,14 @@ public class Buses{
 
         }
         else if(n==4){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
+            System.out.println();
             if(pessNum<=available4){
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
@@ -148,7 +158,7 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+                System.out.println("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
@@ -162,13 +172,14 @@ public class Buses{
             }
         }
         else if(n==5){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
+            System.out.println();
             if(pessNum<=available5){
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
@@ -178,7 +189,7 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+                System.out.print("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
@@ -192,13 +203,14 @@ public class Buses{
             }
         }
         else if(n==6){
-            System.out.println("Enter your Name: ");
+            System.out.print("Enter your Name: ");
             String name = in.readLine();
-            System.out.println("Enter your Mobile number: ");
+            System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.println("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are you?: ");
             pessNum=input.nextInt();
 
+            System.out.println();
             if(pessNum<=available6){
                 System.out.println("Pessenger details");
                 System.out.println("Pessenger Name: "+name);
@@ -208,7 +220,8 @@ public class Buses{
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
-                System.out.println("Are you confirm your ticket (Y/N): ");
+
+                System.out.println("\nAre you confirm your ticket (Y/N): ");
                 String ch = in.readLine();
 
                 if(ch.equals("Y")){
@@ -221,11 +234,13 @@ public class Buses{
                 System.out.println("Sorry! We do not have "+pessNum+" Seat! \n We have "+available6+ " Seat");
             }
         }
+        // IF CHOOSE EXIT
         else if(n==7){
             return;
         }
+        // IF CHOOSE OUT OF THE RANG (1-7)
         else{
-            System.out.println("Please Enter valid Number(1-7): ");
+            System.out.print("Please Enter valid Number(1-7): ");
             Buses.booking(available1, available2, available3, available4 ,available5, available6);
         }
     }

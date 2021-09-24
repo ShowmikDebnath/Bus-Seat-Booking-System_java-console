@@ -11,10 +11,10 @@ public class Main {
     Login page ta pore tik kormu.........
     okhon baki kaj gula kori :)
  */
-        System.out.println("Enter your Username: ");
+        System.out.print("Enter your Username: ");
         String username = input.nextLine();
 
-        System.out.println("Enter Password: ");
+        System.out.print("Enter Password: ");
         String pass = input.nextLine();
 
         if ((username.equals("1") && pass.equals("1"))) {
