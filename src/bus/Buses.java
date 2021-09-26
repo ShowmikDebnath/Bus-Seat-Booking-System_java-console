@@ -49,7 +49,7 @@ public class Buses{
             String name = in.readLine();
             System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.print("How Many pessenger are you?: ");
+            System.out.print("How Many pessenger are with you?: ");
             pessNum=input.nextInt();
 
             System.out.println();
@@ -82,16 +82,16 @@ public class Buses{
             String name = in.readLine();
             System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.print("How Many pessenger are you?: ");
+            System.out.print("How Many passenger are you?: ");
             pessNum=input.nextInt();
 
             System.out.println();
             if(pessNum<=available2){
-                System.out.println("Pessenger details");
-                System.out.println("Pessenger Name: "+name);
-                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Passenger details");
+                System.out.println("Passenger Name: "+name);
+                System.out.println("Passenger Mobile Number: "+number);
                 System.out.println("Destination: Sylhet-Dhaka");
-                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Passenger : "+pessNum);
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
@@ -113,16 +113,16 @@ public class Buses{
             String name = in.readLine();
             System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.print("How Many pessenger are you?: ");
+            System.out.print("How Many passenger are you?: ");
             pessNum=input.nextInt();
 
             System.out.println();
             if(pessNum<=available3){
-                System.out.println("Pessenger details");
-                System.out.println("Pessenger Name: "+name);
-                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Passenger details");
+                System.out.println("Passenger Name: "+name);
+                System.out.println("Passenger Mobile Number: "+number);
                 System.out.println("Destination: Chattagram-Sylhet");
-                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Passenger : "+pessNum);
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
@@ -150,11 +150,11 @@ public class Buses{
 
             System.out.println();
             if(pessNum<=available4){
-                System.out.println("Pessenger details");
-                System.out.println("Pessenger Name: "+name);
-                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Passenger details");
+                System.out.println("Passenger Name: "+name);
+                System.out.println("Passenger Mobile Number: "+number);
                 System.out.println("Destination: Sylhet-Chattagram");
-                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Passenger : "+pessNum);
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
@@ -176,16 +176,16 @@ public class Buses{
             String name = in.readLine();
             System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.print("How Many pessenger are you?: ");
+            System.out.print("How Many passenger are you?: ");
             pessNum=input.nextInt();
 
             System.out.println();
             if(pessNum<=available5){
-                System.out.println("Pessenger details");
-                System.out.println("Pessenger Name: "+name);
-                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Passenger details");
+                System.out.println("Passenger Name: "+name);
+                System.out.println("Passenger Mobile Number: "+number);
                 System.out.println("Destination: Dhaka-Chattagram");
-                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Passenger : "+pessNum);
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 
@@ -207,16 +207,16 @@ public class Buses{
             String name = in.readLine();
             System.out.print("Enter your Mobile number: ");
             number = input.nextInt();
-            System.out.print("How Many pessenger are you?: ");
+            System.out.print("How Many passenger are you?: ");
             pessNum=input.nextInt();
 
             System.out.println();
             if(pessNum<=available6){
-                System.out.println("Pessenger details");
-                System.out.println("Pessenger Name: "+name);
-                System.out.println("Pessenger Mobile Number: "+number);
+                System.out.println("Passenger details");
+                System.out.println("Passenger Name: "+name);
+                System.out.println("Passenger Mobile Number: "+number);
                 System.out.println("Destination: Chattagram-Dhaka");
-                System.out.println("Pessenger : "+pessNum);
+                System.out.println("Passenger : "+pessNum);
                 System.out.println("Fare: 420");
                 System.out.println("Total Fare: "+(pessNum*420));
 

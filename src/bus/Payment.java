@@ -25,7 +25,7 @@ public class Payment {
         this.available2 = available2;
 
         System.out.println();
-        System.out.println("Paseemger Details");
+        System.out.println("Paseenger Details");
         System.out.println("Passenger Name: "+this.Name);
         System.out.println("Passenger Destination: "+this.Destination);
         System.out.println("Fare : "+this.fare);
@@ -134,3 +134,4 @@ public class Payment {
     }
 
 }
+//nabila
