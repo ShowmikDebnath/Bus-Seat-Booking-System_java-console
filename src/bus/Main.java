@@ -245,11 +245,13 @@ public class Main {
                             if (user_date == 1){
                                 // Menu menu = new Menu();
                                 // Date1 d1 = new Date1();
+                                Buses buses = new Buses(); // Called Bus class
+                                /*
                                 object_date = date1;
                                 object_bus = "Sy->Ch";// object_bus = d1.destination;   // Transfer the destination (String) value from date1 class
                                 object_seat = 6;      // object_seat = d1.seat;         // Transfer the seat(int) value from date1 class
                                 object_taka = 3000;   // object_taka = d1.taka;         // Transfer the taka(int) value from date1 class
-
+*/
                             }
                             else if(user_date == 2){
                                 // Menu menu = new Menu();
