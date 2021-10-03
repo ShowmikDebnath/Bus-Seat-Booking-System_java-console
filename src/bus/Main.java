@@ -1,4 +1,3 @@
-//mithila
 package bus;
 import java.util.*;
 import java.text.*;
