@@ -1,18 +1,10 @@
-// roni
 package bus;
-
-
 import java.util.*;
 import java.text.*;
-import java.util.Scanner;
-import java.util.Vector;
 
-import java.io.IOException;
-import java.util.Scanner;
-
-public class Main {
-
-    public static void main(String[] args) throws IOException {
+public class Main
+{
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         String date0, date1, date2, date3, date4, date5;
@@ -50,22 +42,72 @@ public class Main {
         formatter = new SimpleDateFormat("dd/MMM/yyyy");
         date5 = formatter.format(date);                         //date5
 
-        Vector<String> name = new Vector<>();                           // vector declearation
+
+        // vector declearation
+        Vector<String> name = new Vector<>();                       // registration Vector
         Vector<String> password = new Vector<>();
         Vector<String> realName = new Vector<>();
         Vector<String> phone = new Vector<>();
+        // log in information
+        Vector<String> pass_Name = new Vector<>();
+        Vector<String> pass_password = new Vector<>();
+        Vector<String> pass_realName = new Vector<>();
+        Vector<String> pass_phone = new Vector<>();
         Vector<String> pass_date = new Vector<>();
         Vector<String> destination = new Vector<>();
         Vector<Integer> seat = new Vector<>();
         Vector<Integer> taka = new Vector<>();
 
+        int Bus_seat[]=new int[31];     // for bus seat
+        for(int i:Bus_seat){ Bus_seat[i] = 0; }   // all bus seat initializing 0 seat
+        Bus_seat[1] = 7;
+        Bus_seat[23] = 9;
+        for(int i = 0; i < 31; i++){System.out.println(i+" number bus = "+Bus_seat[i]);}
 
         // all element declearation
 
-        name.add("Roni");    password.add("454545");   realName.add("Roni Acharjee");    phone.add("01959239908");
-        name.add("Showmik"); password.add("676767");   realName.add("Showmik Debnath");  phone.add("01765636035");
-        name.add("Mithila"); password.add("232323");   realName.add("Mithila Talukdar"); phone.add("01729404135");
-        name.add("Nabila");  password.add("898989");   realName.add("Nabila Zannath");   phone.add("01700940686");
+        // registration Vector
+
+        name.add("Roni");
+        name.add("Showmik");
+        name.add("Mithila");
+        name.add("Nabila");
+
+        password.add("454545");
+        password.add("676767");
+        password.add("232323");
+        password.add("898989");
+
+        realName.add("Roni Acharjee");
+        realName.add("Showmik Debnath");
+        realName.add("Mithila Talukdar");
+        realName.add("Nabila Zannath");
+
+        phone.add("01959239908");
+        phone.add("01765636035");
+        phone.add("01729404135");
+        phone.add("01700940686");
+
+        // log in Vector
+        pass_Name.add(name.get(0));
+        pass_Name.add(name.get(1));
+        pass_Name.add(name.get(2));
+        pass_Name.add(name.get(3));
+
+        pass_password.add(password.get(0));
+        pass_password.add(password.get(1));
+        pass_password.add(password.get(2));
+        pass_password.add(password.get(3));
+
+        pass_realName.add(realName.get(0));
+        pass_realName.add(realName.get(1));
+        pass_realName.add(realName.get(2));
+        pass_realName.add(realName.get(3));
+
+        pass_phone.add(phone.get(0));
+        pass_phone.add(phone.get(1));
+        pass_phone.add(phone.get(2));
+        pass_phone.add(phone.get(3));
 
         pass_date.add(date1);
         pass_date.add(date2);
@@ -87,7 +129,7 @@ public class Main {
         taka.add(2000);
         taka.add(2500);
 
-        //int object_seat = 0; seat.add(object_seat);
+
 
         for (int i = 0; i == 0 ; ){
             System.out.println("Passengers   = "+ name.size());
@@ -124,17 +166,17 @@ public class Main {
                     pass_temp = pass;
                 }
                 else if( name_temp.equals("") && pass_temp.equals("") ){     // if name_temp and pass_temp remains null then it will registared
-                    System.out.println("\n\t\t\t\t\t\t\tYou are registared\n");
+
                     name.add(userName);
                     password.add(pass);
                     System.out.print("Real name: "); String realname = sc.nextLine();     // Real name enter
                     System.out.print("Phone: ");     String ph = sc.nextLine();           // Phone enter
+
                     realName.add(realname);
                     phone.add(ph);
-                    pass_date.add("X");
-                    destination.add("X");
-                    seat.add(0);
-                    taka.add(0);
+
+                    System.out.println("\n\t\t\t\t\t\t\tYou are registared\n");
+
                     System.out.println("\n\nUser name  : "+name.get(size));
                     System.out.println("Password   : "+password.get(size));
                     System.out.println("Real name  : "+realName.get(size));
@@ -183,7 +225,7 @@ public class Main {
                         if(admin_ChoiceSearchUserName == 1 ){                             // admin search passenger
                             System.out.println("\n\t\t\t\t\t\t You can search Passenger information from the list ");
                             System.out.print("Passenger number: "); int admin_user = sc.nextInt();
-                            System.out.println( "Passenger"+(admin_user) + "----" + realName.get(admin_user-1)+ "----" + phone.get(admin_user-1) );
+                            System.out.println( "Passenger"+(admin_user) + "----" + pass_realName.get(admin_user-1)+ "----" + pass_phone.get(admin_user-1) );
                         }
                         else if(admin_ChoiceSearchUserName == 2){
                             System.out.println("\n\t OK \n");
@@ -197,11 +239,16 @@ public class Main {
                         System.out.println("Do you want to delete all information\n 1. Yes \n 2. not");
                         int add_all_delete = sc.nextInt();
                         if(add_all_delete == 1){
-                            System.out.println("You cleared all information");                // delete all information from register list
+                            System.out.println("You cleared all information");             // delete all information from register list
                             name.clear();
                             password.clear();
                             realName.clear();
                             phone.clear();
+
+                            pass_Name.clear();
+                            pass_password.clear();
+                            pass_realName.clear();
+                            pass_phone.clear();
                             pass_date.clear();
                             destination.clear();
                             seat.clear();
@@ -215,8 +262,8 @@ public class Main {
                         System.out.println("\t\t\t\t\t\t\tPlease enter a valid number ");
                     }
                 }
-                else{                                                           // Passenger seat bookingn
-                    for(int j = 0; j < size3; j++){                             // this for searching if there is matched in user name and password then all function will execute
+                else{                                                           // Passenger seat booking
+                    for(int j = size3-1; j>=0; j--){                            // this for searching if there is matched in user name and password then all function will execute
                         if(name2.equals(name.get(j)) && pass2.equals(password.get(j))){
                             System.out.println("You are registared");
                             temp_name2 = name2;
@@ -236,70 +283,148 @@ public class Main {
                             System.out.println("4. "+date4);
                             System.out.println("5. "+date5);
 
-                            System.out.println("Enter date between 1 to 5: "); int user_date = sc.nextInt();
+                            System.out.print("Enter date between 1 to 5: "); int user_date = sc.nextInt();
 
                             String object_date = "";
                             String object_bus = "";
                             int object_seat = 0;
                             int object_taka = 0;
 
+
+
                             if (user_date == 1){
-                                // Menu menu = new Menu();
-                                // Date1 d1 = new Date1();
-                                Buses buses = new Buses(); // Called Bus class
-                                /*
-                                object_date = date1;
-                                object_bus = "Sy->Ch";// object_bus = d1.destination;   // Transfer the destination (String) value from date1 class
-                                object_seat = 6;      // object_seat = d1.seat;         // Transfer the seat(int) value from date1 class
-                                object_taka = 3000;   // object_taka = d1.taka;         // Transfer the taka(int) value from date1 class
-*/
+                                Date1 d1 = new Date1(date1, Bus_seat[1], Bus_seat[2], Bus_seat[3], Bus_seat[4], Bus_seat[5], Bus_seat[6]);
+                                Payment pay = new Payment();
+                                if(pay.confirm == 1){
+                                    Bus_seat[1] += d1.seat1;
+                                    Bus_seat[2] += d1.seat2;
+                                    Bus_seat[3] += d1.seat3;
+                                    Bus_seat[4] += d1.seat4;
+                                    Bus_seat[5] += d1.seat5;
+                                    Bus_seat[6] += d1.seat6;
+                                    object_date = date1;
+                                    object_bus = d1.destination;   // Transfer the destination (String) value from Payment class
+                                    object_seat = d1.seat;         // Transfer the seat(int) value from Payment class
+                                    object_taka = d1.taka;         // Transfer the taka(int) value from Payment class
+                                }
+                                else{
+                                    System.out.println("Your seat is not booked");
+                                }
                             }
                             else if(user_date == 2){
-                                // Menu menu = new Menu();
-                                // Date2 d2 = new Date2();
-                                object_date = date2;
-                                object_bus = "Ch->Sy"; // Transfer the destination (String) value from date2 class
-                                object_seat = 8;       // Transfer the seat(int) value from date2 class
-                                object_taka = 4000;    // Transfer the taka(int) value from date2 class
+		                        /*
+		                        Date2 d2 = new Date2(date2, Bus_seat[6+1], Bus_seat[6+2], Bus_seat[6+3], Bus_seat[6+4], Bus_seat[6+5], Bus_seat[6+6]);
+		                        Payment pay = new Payment();
+		                        if(pay.confirm == 1){
+		                            Bus_seat[6+1] += d2.seat1;
+		                            Bus_seat[6+2] += d2.seat2;
+		                            Bus_seat[6+3] += d2.seat3;
+		                            Bus_seat[6+4] += d2.seat4;
+		                            Bus_seat[6+5] += d2.seat5;
+		                            Bus_seat[6+6] += d2.seat6;
+		                            object_date = date2;
+		                            object_bus = d2.destination;   // Transfer the destination (String) value from Payment class
+		                            object_seat = d2.seat;         // Transfer the seat(int) value from Payment class
+		                            object_taka = d2.taka;         // Transfer the taka(int) value from Payment class
+		                        }
+		                        else{
+		                            System.out.println("Your seat is not booked");
+		                        }
+		                        */
                             }
                             else if(user_date == 3){
-                                // Menu menu = new Menu();
-                                // Date3 d3 = new Date3();
-                                object_date = date3;
-                                object_bus = "Sy->Dh"; // Transfer the destination (String) value from date2 class
-                                object_seat = 2;       // Transfer the seat(int) value from date2 class
-                                object_taka = 1000;    // Transfer the taka(int) value from date2 class
+		                        /*
+		                        Date3 d3 = new Date3(date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6]);
+		                        Payment pay = new Payment();
+		                        if(pay.confirm == 1){
+		                            Bus_seat[12+1] += d3.seat1;
+		                            Bus_seat[12+2] += d3.seat2;
+		                            Bus_seat[12+3] += d3.seat3;
+		                            Bus_seat[12+4] += d3.seat4;
+		                            Bus_seat[12+5] += d3.seat5;
+		                            Bus_seat[12+6] += d3.seat6;
+		                            object_date = date3;
+		                            object_bus = d3.destination;   // Transfer the destination (String) value from Payment class
+		                            object_seat = d3.seat;         // Transfer the seat(int) value from Payment class
+		                            object_taka = d3.taka;         // Transfer the taka(int) value from Payment class
+		                        }
+		                        else{
+		                            System.out.println("Your seat is not booked");
+		                        }
+		                         */
                             }
                             else if(user_date == 4){
-                                // Menu menu = new Menu();
-                                // Date4 d4 = new Date4();
-                                object_date = date4;
-                                object_bus = "Dh->Sy"; // Transfer the destination (String) value from date2 class
-                                object_seat = 1;       // Transfer the seat(int) value from date2 class
-                                object_taka = 500;     // Transfer the taka(int) value from date2 class
+		                        /*
+		                        Date4 d4 = new Date4(date4, Bus_seat[18+1], Bus_seat[18+2], Bus_seat[18+3], Bus_seat[18+4], Bus_seat[18+5], Bus_seat[18+6]);
+		                        Payment pay = new Payment();
+		                        if(pay.confirm == 1){
+		                            Bus_seat[18+1] += d4.seat1;
+		                            Bus_seat[18+2] += d4.seat2;
+		                            Bus_seat[18+3] += d4.seat3;
+		                            Bus_seat[18+4] += d4.seat4;
+		                            Bus_seat[18+5] += d4.seat5;
+		                            Bus_seat[18+6] += d4.seat6;
+		                            object_date = date4;
+		                            object_bus = d4.destination;   // Transfer the destination (String) value from Payment class
+		                            object_seat = d4.seat;         // Transfer the seat(int) value from Payment class
+		                            object_taka = d4.taka;         // Transfer the taka(int) value from Payment class
+		                        }
+		                        else{
+		                            System.out.println("Your seat is not booked");
+		                        }
+		                        */
                             }
                             else if(user_date == 5){
-                                // Menu menu = new Menu();
-                                // Date5 d5 = new Date5();
-                                object_date = date5;
-                                object_bus = "Sy->Ch"; // Transfer the destination (String) value from date2 class
-                                object_seat = 3;       // Transfer the seat(int) value from date2 class
-                                object_taka = 1500;    // Transfer the taka(int) value from date2 class
-                            }
-                            else{
-                                System.out.println("Please enter the date between" + date1 + "to" + date5);
+		                        /*
+		                        Date5 d5 = new Date5(date5, Bus_seat[24+1], Bus_seat[24+2], Bus_seat[24+3], Bus_seat[24+4], Bus_seat[24+5], Bus_seat[24+6]);
+		                        Payment pay = new Payment();
+		                        if(pay.confirm == 1){
+		                            Bus_seat[24+1] += d5.seat1;
+		                            Bus_seat[24+2] += d5.seat2;
+		                            Bus_seat[24+3] += d5.seat3;
+		                            Bus_seat[24+4] += d5.seat4;
+		                            Bus_seat[24+5] += d5.seat5;
+		                            Bus_seat[24+6] += d5.seat6;
+		                            object_date = date5;
+		                            object_bus = d5.destination;   // Transfer the destination (String) value from Payment class
+		                            object_seat = d5.seat;         // Transfer the seat(int) value from Payment class
+		                            object_taka = d5.taka;         // Transfer the taka(int) value from Payment class
+		                        }
+		                        else{
+		                            System.out.println("Your seat is not booked");
+		                        }
+		                        */
                             }
 
-                            pass_date.set( seat.size()-1 , object_date);
-                            destination.set(seat.size()-1, object_bus);
-                            seat.set( seat.size()-1 , object_seat );
-                            taka.set( seat.size()-1 , object_taka );
+                            System.out.println("Are you sure you want to book seat na kita moja kkorray ?? ");
+                            Payment pay = new Payment();
+                            System.out.println(pay.confirm);
+                            if(pay.confirm == 1 && object_seat > 0 && object_taka > 0){
+                                pass_Name.add(name.get(j));                         // add log in Vector
+                                pass_password.add(password.get(j));
+                                pass_realName.add(realName.get(j));
+                                pass_phone.add(phone.get(j));
+
+                                pass_date.add ( object_date );
+                                destination.add ( object_bus );
+                                seat.add ( object_seat );
+                                taka.add ( object_taka );
+
+                                System.out.println("You seat is booked");
+                            }
+                            else{
+                                System.out.println("Your seat is not booked");
+                            }
+
+                            System.out.println(1+" number bus = "+Bus_seat[1]); // delete korte hobe
+
                             System.out.println("****************************************");
                             System.out.println("You enterd:");
-                            System.out.println("Date       : "+pass_date.get(name.size()-1));
-                            System.out.println("destination: "+destination.get(name.size()-1));
-                            System.out.println("Seat       : "+seat.get(name.size()-1));
-                            System.out.println("Fare       : "+taka.get(name.size()-1));
+                            System.out.println("Name       : "+pass_Name.get(seat.size()-1) );
+                            System.out.println("Date       : "+pass_date.get(seat.size()-1));
+                            System.out.println("destination: "+destination.get(seat.size()-1));
+                            System.out.println("Seat       : "+seat.get(seat.size()-1));
+                            System.out.println("Fare       : "+taka.get(seat.size()-1));
                             System.out.println("****************************************/n");
                         }
                     }
@@ -313,8 +438,8 @@ public class Main {
             else if(user == 3){                                                                  // log out
                 System.out.println("If you want to delete your all information deleted put your name and password");
                 String z = sc.nextLine();
-                System.out.print("User name:"); String name3 = sc.nextLine();
-                System.out.print("password"); String pass3 = sc.nextLine();
+                System.out.print("User name  : "); String name3 = sc.nextLine();
+                System.out.print("password   : "); String pass3 = sc.nextLine();
 
                 String temp_name3 = ""; String temp_pass3 = "";
 
@@ -322,14 +447,11 @@ public class Main {
                     if( name3.equals(name.get(l)) && pass3.equals(password.get(l))){
                         temp_name3 = name.get(l);
                         temp_pass3 = password.get(l);
+
                         name.remove(l);                                                              //vec.remove(l)
                         password.remove(l);
                         realName.remove(l);
                         phone.remove(l);
-                        pass_date.remove(l);
-                        destination.remove(l);
-                        seat.remove(l);
-                        taka.remove(l);
 
                         System.out.println(name);                                                    // will remove
                         System.out.println("\n\t\t\t\t\t\t\tYour all information deleted\n");
@@ -352,4 +474,3 @@ public class Main {
         }
     }
 }
-
