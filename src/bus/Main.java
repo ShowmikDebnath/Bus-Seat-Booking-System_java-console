@@ -334,7 +334,7 @@ public class Main
 
                             }
                             else if(user_date == 3){
-		                        /*
+
 		                        Date3 d3 = new Date3(date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6]);
 		                        Payment pay = new Payment();
 		                        if(pay.confirm == 1){
@@ -352,10 +352,10 @@ public class Main
 		                        else{
 		                            System.out.println("Your seat is not booked");
 		                        }
-		                         */
+
                             }
                             else if(user_date == 4){
-		                        /*
+
 		                        Date4 d4 = new Date4(date4, Bus_seat[18+1], Bus_seat[18+2], Bus_seat[18+3], Bus_seat[18+4], Bus_seat[18+5], Bus_seat[18+6]);
 		                        Payment pay = new Payment();
 		                        if(pay.confirm == 1){
@@ -373,10 +373,10 @@ public class Main
 		                        else{
 		                            System.out.println("Your seat is not booked");
 		                        }
-		                        */
+
                             }
                             else if(user_date == 5){
-		                        /*
+
 		                        Date5 d5 = new Date5(date5, Bus_seat[24+1], Bus_seat[24+2], Bus_seat[24+3], Bus_seat[24+4], Bus_seat[24+5], Bus_seat[24+6]);
 		                        Payment pay = new Payment();
 		                        if(pay.confirm == 1){
@@ -394,7 +394,7 @@ public class Main
 		                        else{
 		                            System.out.println("Your seat is not booked");
 		                        }
-		                        */
+
                             }
 
                             System.out.println("Are you sure you want to book seat na kita moja kkorray ?? ");
@@ -477,4 +477,4 @@ public class Main
 }
 
 
-//Done
+
