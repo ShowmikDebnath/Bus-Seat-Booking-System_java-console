@@ -333,7 +333,7 @@ public class Main
 
                             }
                             else if(user_date == 3){
-		                        /*
+		                        
 		                        Date3 d3 = new Date3(date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6]);
 		                        Payment pay = new Payment();
 		                        if(pay.confirm == 1){
@@ -351,7 +351,7 @@ public class Main
 		                        else{
 		                            System.out.println("Your seat is not booked");
 		                        }
-		                         */
+
                             }
                             else if(user_date == 4){
 		                        /*
