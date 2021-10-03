@@ -312,7 +312,7 @@ public class Main
                                 }
                             }
                             else if(user_date == 2){
-		                        /*
+
 		                        Date2 d2 = new Date2(date2, Bus_seat[6+1], Bus_seat[6+2], Bus_seat[6+3], Bus_seat[6+4], Bus_seat[6+5], Bus_seat[6+6]);
 		                        Payment pay = new Payment();
 		                        if(pay.confirm == 1){
@@ -330,7 +330,7 @@ public class Main
 		                        else{
 		                            System.out.println("Your seat is not booked");
 		                        }
-		                        */
+
                             }
                             else if(user_date == 3){
 		                        /*
