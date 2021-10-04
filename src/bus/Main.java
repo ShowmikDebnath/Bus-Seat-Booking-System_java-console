@@ -295,7 +295,9 @@ public class Main
                             if (user_date == 1){
                                 Date1 d1 = new Date1(date1, Bus_seat[1], Bus_seat[2], Bus_seat[3], Bus_seat[4], Bus_seat[5], Bus_seat[6]);
                                 Payment pay = new Payment();
-                                if(pay.confirm == 1){
+                                //if(pay.confirm == 1){
+                                //if(pay.Bkash() == 1){
+                                if(pay.confirm==1){
                                     Bus_seat[1] += d1.seat1;
                                     Bus_seat[2] += d1.seat2;
                                     Bus_seat[3] += d1.seat3;
@@ -315,7 +317,8 @@ public class Main
 
 		                        Date2 d2 = new Date2(date2, Bus_seat[6+1], Bus_seat[6+2], Bus_seat[6+3], Bus_seat[6+4], Bus_seat[6+5], Bus_seat[6+6]);
 		                        Payment pay = new Payment();
-		                        if(pay.confirm == 1){
+		                        //if(pay.confirm == 1){
+                                if(pay.confirm==1){
 		                            Bus_seat[6+1] += d2.seat1;
 		                            Bus_seat[6+2] += d2.seat2;
 		                            Bus_seat[6+3] += d2.seat3;
@@ -336,6 +339,7 @@ public class Main
 
 		                        Date3 d3 = new Date3(date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6]);
 		                        Payment pay = new Payment();
+		                        //if(pay.confirm == 1){
 		                        if(pay.confirm == 1){
 		                            Bus_seat[12+1] += d3.seat1;
 		                            Bus_seat[12+2] += d3.seat2;

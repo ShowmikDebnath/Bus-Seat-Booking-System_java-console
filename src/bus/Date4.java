@@ -29,6 +29,7 @@ public class Date4{
         System.out.print("Tickets : ");
         seat_temp = sc.nextInt();
 
+        Scanner input = new Scanner(System.in);
         if(seat_temp > 0){
             switch (choice) {
                 case 1:
@@ -38,9 +39,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat1 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat1 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat1 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -54,9 +67,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat2 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat2 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat2 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -69,9 +94,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat3 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat3 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat3 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -84,9 +121,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat4 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat4 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat4 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -99,9 +148,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat5 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat5 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat5 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -114,9 +175,21 @@ public class Date4{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
 
-                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
+//
+//                        this.seat6 = seat_temp;
+                        // Asked user to confirm ticket and go to the payment option
+                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        String ch = input.nextLine();
 
-                        this.seat6 = seat_temp;
+                        if(ch.equals("Y")){
+                            Payment pay = new Payment(this.destination, this.seat, this.taka);
+
+                            this.seat6 = seat_temp;
+                        }
+                        else{
+                            return;
+                        }
                     }
                     else{
                         System.out.println("we not have enough seat");
