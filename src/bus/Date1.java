@@ -15,14 +15,15 @@ public class Date1{
     private int seat_temp;
 
     public Date1(String date, int seat1, int seat2, int seat3, int seat4, int seat5, int seat6){
-        System.out.println("**********Where You want to go:***********");
+        System.out.println("\n**********Where You want to go:***********");
+        System.out.println("Bus available on "+date+ " are:");
         System.out.println("1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- 500 ");
         System.out.println("2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- 500 ");
         System.out.println("3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- 500 ");
         System.out.println("4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- 500 ");
         System.out.println("5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- 500 ");
         System.out.println("6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- 500 ");
-        System.out.println("******************************************");
+        System.out.println("******************************************\n");
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number between 1 to 6 : ") ; int choice = sc.nextInt();
@@ -38,15 +39,13 @@ public class Date1{
                         this.destination = "Sy->Dh";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
-
+                        this.seat1 = seat_temp;
                         // Asked user to confirm ticket and go to the payment option
                         System.out.println("Are you Confirm ticket (Y/N): ");
                         String ch = input.nextLine();
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat1 = seat_temp;
                         }
                         else{
                             return;
@@ -64,7 +63,7 @@ public class Date1{
                         this.destination = "Dh->Sy";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
-
+                        this.seat2 = seat_temp;
 //                        Payment pay = new Payment(this.destination, this.seat, this.taka);
 //
 //                        this.seat2 = seat_temp;
@@ -74,8 +73,6 @@ public class Date1{
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat2 = seat_temp;
                         }
                         else{
                             return;
@@ -91,6 +88,7 @@ public class Date1{
                         this.destination = "Sy->Ch";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
+                        this.seat3 = seat_temp;
 
 //                        Payment pay = new Payment(this.destination, this.seat, this.taka);
 //
@@ -101,8 +99,6 @@ public class Date1{
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat3 = seat_temp;
                         }
                         else{
                             return;
@@ -118,7 +114,7 @@ public class Date1{
                         this.destination = "Ch->Sy";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
-
+                        this.seat4 = seat_temp;
 //                        Payment pay = new Payment(this.destination, this.seat, this.taka);
 //
 //                        this.seat4 = seat_temp;
@@ -129,8 +125,6 @@ public class Date1{
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat4 = seat_temp;
                         }
                         else{
                             return;
@@ -147,6 +141,7 @@ public class Date1{
                         this.destination = "Dh->Ch";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
+                        this.seat5 = seat_temp;
 
 //                        Payment pay = new Payment(this.destination, this.seat, this.taka);
 //
@@ -158,8 +153,6 @@ public class Date1{
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat5 = seat_temp;
                         }
                         else{
                             return;
@@ -176,6 +169,7 @@ public class Date1{
                         this.destination = "Ch->Dh";
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
+                        this.seat6 = seat_temp;
 
 //                        Payment pay = new Payment(this.destination, this.seat, this.taka);
 //
@@ -187,8 +181,6 @@ public class Date1{
 
                         if(ch.equals("Y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
-
-                            this.seat6 = seat_temp;
                         }
                         else{
                             return;
