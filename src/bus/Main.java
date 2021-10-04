@@ -48,7 +48,7 @@ public class Main
         Vector<String> password = new Vector<>();
         Vector<String> realName = new Vector<>();
         Vector<String> phone = new Vector<>();
-        // log in information
+                                                                    // seat booker information storing
         Vector<String> pass_Name = new Vector<>();
         Vector<String> pass_password = new Vector<>();
         Vector<String> pass_realName = new Vector<>();
@@ -439,17 +439,17 @@ public class Main
                                     System.out.println("Your seat is not booked");
                                 }
 
-                                System.out.println(1+" number bus = "+Bus_seat[1]); // delete korte hobe
-
-                                System.out.println("****************************************");
-                                System.out.println("You enterd:");
-                                System.out.println("Name       : "+pass_Name.get(seat.size()-1) );
-                                System.out.println("Date       : "+pass_date.get(seat.size()-1));
-                                System.out.println("destination: "+destination.get(seat.size()-1));
-                                System.out.println("Seat       : "+seat.get(seat.size()-1));
-                                System.out.println("Fare       : "+taka.get(seat.size()-1));
-                                System.out.println("****************************************/n");
-
+                                //System.out.println(1+" number bus = "+Bus_seat[1]); // delete korte hobe
+                                if(pay.confirm == 1 && object_seat > 0 && object_taka > 0) {
+                                    System.out.println("****************************************");
+                                    System.out.println("You enterd:");
+                                    System.out.println("Name       : " + pass_Name.get(seat.size() - 1));
+                                    System.out.println("Date       : " + pass_date.get(seat.size() - 1));
+                                    System.out.println("destination: " + destination.get(seat.size() - 1));
+                                    System.out.println("Seat       : " + seat.get(seat.size() - 1));
+                                    System.out.println("Fare       : " + taka.get(seat.size() - 1));
+                                    System.out.println("****************************************/n");
+                                }
                             }
                         }
                     }
