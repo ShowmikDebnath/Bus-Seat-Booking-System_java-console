@@ -1,12 +1,10 @@
 package bus;
-
 import java.util.Scanner;
 
-public class Date2{
+public class Date2 extends Taka{
     String destination;
     int seat;
     int taka;
-
     int seat1 = 0;
     int seat2 = 0;
     int seat3 = 0;
@@ -16,17 +14,17 @@ public class Date2{
 
     private int seat_temp;
 
-    public Date2(String date, int seat1, int seat2, int seat3, int seat4, int seat5, int seat6){
+    public Date2(String date, int seat1, int seat2, int seat3, int seat4, int seat5, int seat6, int tsd, int tds, int tsc, int tcs, int tdc, int tcd){
         System.out.println("\n**********Where You want to go:***********");
         System.out.println("Bus available on "+date+ " are:");
-        System.out.println("1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- 500 ");
-        System.out.println("2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- 500 ");
-        System.out.println("3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- 500 ");
-        System.out.println("4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- 500 ");
-        System.out.println("5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- 500 ");
-        System.out.println("6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- 500 ");
-        System.out.println("******************************************");
-
+        System.out.println("1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- " + tsd);
+        System.out.println("2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- " + tds);
+        System.out.println("3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- " + tsc);
+        System.out.println("4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- " + tcs);
+        System.out.println("5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- " + tdc);
+        System.out.println("6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- " + tcd);
+        System.out.println("******************************************\n");
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number between 1 to 6 : ") ; int choice = sc.nextInt();
         System.out.print("Tickets : ");
@@ -40,7 +38,7 @@ public class Date2{
 
                         this.destination = "Sy->Dh";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tsd) ;
                         this.seat1 = seat_temp;
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
@@ -55,7 +53,7 @@ public class Date2{
 
                         this.destination = "Dh->Sy";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tds) ;
                         this.seat2 = seat_temp;
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
@@ -69,9 +67,8 @@ public class Date2{
 
                         this.destination = "Sy->Ch";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tsc) ;
                         this.seat3 = seat_temp;
-
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
                     }
@@ -84,10 +81,11 @@ public class Date2{
 
                         this.destination = "Ch->Sy";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tcs) ;
                         this.seat4 = seat_temp;
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
+
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -98,7 +96,7 @@ public class Date2{
 
                         this.destination = "Dh->Ch";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tdc) ;
                         this.seat5 = seat_temp;
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
@@ -112,7 +110,7 @@ public class Date2{
 
                         this.destination = "Ch->Dh";
                         this.seat = seat_temp;
-                        this.taka = this.seat * 500 ;
+                        this.taka = taka_function(this.seat, tcd) ;
                         this.seat6 = seat_temp;
 
                         Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
@@ -131,4 +129,3 @@ public class Date2{
         }
     }
 }
-
