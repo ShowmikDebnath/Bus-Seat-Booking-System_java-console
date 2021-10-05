@@ -1,3 +1,4 @@
+package bus;
 
 import java.util.*;
 import java.text.*;
@@ -208,7 +209,8 @@ public class Main
                         System.out.println("**********");
 
                         if(admin_choice == 1){                                                   // Passenger information
-                            for (int p = 0; p < size3 ; p++ ){
+                            //for (int p = 0; p < size3 ; p++ ){
+                            for (int p = 0; p < seat.size() ; p++ ){
                                 System.out.println( "Passenger"+(p+1) + "----" + realName.get(p)+ "----" + phone.get(p) );
                             }
                         }

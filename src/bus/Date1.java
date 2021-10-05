@@ -1,10 +1,11 @@
 package bus;
+
 import java.util.Scanner;
-public class Date1{
+
+public class Date1 extends Payment{
     String destination;
     int seat;
     int taka;
-
     int seat1 = 0;
     int seat2 = 0;
     int seat3 = 0;
@@ -40,16 +41,24 @@ public class Date1{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
                         this.seat1 = seat_temp;
+
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
+
                         // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
+                        /*System.out.println("Are you Confirm ticket (Y/N): ");
                         String ch = input.nextLine();
 
-                        if(ch.equals("Y")){
+                        if(ch.equals("Y") || ch.equals("y")){
                             Payment pay = new Payment(this.destination, this.seat, this.taka);
                         }
-                        else{
-                            return;
+                        else if(ch.equals("N") || ch.equals("n")){
+                            int payment = new Payment().confirm = 0;
+                            //return;
                         }
+                        else{
+                            System.out.println("Please enter (Y/N) : ");
+                            break;
+                        }*/
 
                     }
                     else{
@@ -64,19 +73,8 @@ public class Date1{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
                         this.seat2 = seat_temp;
-//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
-//
-//                        this.seat2 = seat_temp;
-                        // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
-                        String ch = input.nextLine();
 
-                        if(ch.equals("Y")){
-                            Payment pay = new Payment(this.destination, this.seat, this.taka);
-                        }
-                        else{
-                            return;
-                        }
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -90,19 +88,7 @@ public class Date1{
                         this.taka = this.seat * 500 ;
                         this.seat3 = seat_temp;
 
-//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
-//
-//                        this.seat3 = seat_temp;
-                        // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
-                        String ch = input.nextLine();
-
-                        if(ch.equals("Y")){
-                            Payment pay = new Payment(this.destination, this.seat, this.taka);
-                        }
-                        else{
-                            return;
-                        }
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -115,20 +101,8 @@ public class Date1{
                         this.seat = seat_temp;
                         this.taka = this.seat * 500 ;
                         this.seat4 = seat_temp;
-//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
-//
-//                        this.seat4 = seat_temp;
 
-                        // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
-                        String ch = input.nextLine();
-
-                        if(ch.equals("Y")){
-                            Payment pay = new Payment(this.destination, this.seat, this.taka);
-                        }
-                        else{
-                            return;
-                        }
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
 
                     }
                     else{
@@ -143,21 +117,7 @@ public class Date1{
                         this.taka = this.seat * 500 ;
                         this.seat5 = seat_temp;
 
-//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
-//
-//                        this.seat5 = seat_temp;
-
-                        // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
-                        String ch = input.nextLine();
-
-                        if(ch.equals("Y")){
-                            Payment pay = new Payment(this.destination, this.seat, this.taka);
-                        }
-                        else{
-                            return;
-                        }
-
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
                     }
                     else{
                         System.out.println("we not have enough seat");
@@ -171,21 +131,7 @@ public class Date1{
                         this.taka = this.seat * 500 ;
                         this.seat6 = seat_temp;
 
-//                        Payment pay = new Payment(this.destination, this.seat, this.taka);
-//
-//                        this.seat6 = seat_temp;
-
-                        // Asked user to confirm ticket and go to the payment option
-                        System.out.println("Are you Confirm ticket (Y/N): ");
-                        String ch = input.nextLine();
-
-                        if(ch.equals("Y")){
-                            Payment pay = new Payment(this.destination, this.seat, this.taka);
-                        }
-                        else{
-                            return;
-                        }
-
+                        Payment pay = new Payment(this.destination, this.seat, this.taka); // Called the payment class
                     }
                     else{
                         System.out.println("we not have enough seat");
