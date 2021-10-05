@@ -1,4 +1,4 @@
-package bus;
+
 import java.util.*;
 import java.text.*;
 
@@ -61,8 +61,7 @@ public class Main
         int Bus_seat[]=new int[31];     // for bus seat
         for(int i:Bus_seat){ Bus_seat[i] = 0; }   // all bus seat initializing 0 seat
         Bus_seat[1] = 4;
-        for(int i = 0; i < 31; i++){System.out.println(i+" number bus = "+Bus_seat[i]);}
-
+        
         // all element declearation
 
         // registration Vector
@@ -138,7 +137,8 @@ public class Main
             System.out.println("1. Sign up");
             System.out.println("2. Log in");
             System.out.println("3. Sign out");
-            System.out.println("4. Exit");
+            System.out.println("4. All information of our service ");
+            System.out.println("5. Exit");
             System.out.print("Press a number between 1 to 4: "); int user = sc.nextInt();
             System.out.println("*************************\n");
 
@@ -486,9 +486,51 @@ public class Main
                     System.out.println("\n\t\t\t\t\t\t\tYou are not registared\n");
                 }
             }
+            
+            else if(user == 4){
+                
+                String SD = "Sylhet to Dhaka      ";
+                String DS = "Dhaka to Sylhet      ";
+                String SC = "Sylhet to Chittagong ";
+                String CS = "Chittagong to Sylhet ";
+                String DC = "Dhaka to Chittagong  ";
+                String CD = "Chittagong to Dhaka  ";
+                System.out.println("******************************************************************************");
+                System.out.println("   Date       " + "      Destination    "+"   Available Seat   " + " Fare ");
+                System.out.println(date1 + "   " + SD + "       " + (30 - Bus_seat[1] ) + "            " + 500 );
+                System.out.println(date1 + "   " + DS + "       " + (30 - Bus_seat[2] ) + "            " + 500 );
+                System.out.println(date1 + "   " + SC + "       " + (30 - Bus_seat[3] ) + "            " + 500 );
+                System.out.println(date1 + "   " + CS + "       " + (30 - Bus_seat[4] ) + "            " + 500 );
+                System.out.println(date1 + "   " + DC + "       " + (30 - Bus_seat[5] ) + "            " + 500 );
+                System.out.println(date1 + "   " + CD + "       " + (30 - Bus_seat[6] ) + "            " + 500 );
+                System.out.println(date2 + "   " + SD + "       " + (30 - Bus_seat[6+1] ) + "            " + 500 );
+                System.out.println(date2 + "   " + DS + "       " + (30 - Bus_seat[6+2] ) + "            " + 500 );
+                System.out.println(date2 + "   " + SC + "       " + (30 - Bus_seat[6+3] ) + "            " + 500 );
+                System.out.println(date2 + "   " + CS + "       " + (30 - Bus_seat[6+4] ) + "            " + 500 );
+                System.out.println(date2 + "   " + DC + "       " + (30 - Bus_seat[6+5] ) + "            " + 500 );
+                System.out.println(date2 + "   " + CD + "       " + (30 - Bus_seat[6+6] ) + "            " + 500 );
+                System.out.println(date3 + "   " + SD + "       " + (30 - Bus_seat[12+1] ) + "            " + 500 );
+                System.out.println(date3 + "   " + DS + "       " + (30 - Bus_seat[12+2] ) + "            " + 500 );
+                System.out.println(date3 + "   " + SC + "       " + (30 - Bus_seat[12+3] ) + "            " + 500 );
+                System.out.println(date3 + "   " + CS + "       " + (30 - Bus_seat[12+4] ) + "            " + 500 );
+                System.out.println(date3 + "   " + DC + "       " + (30 - Bus_seat[12+5] ) + "            " + 500 );
+                System.out.println(date3 + "   " + CD + "       " + (30 - Bus_seat[12+6] ) + "            " + 500 );
+                System.out.println(date4 + "   " + SD + "       " + (30 - Bus_seat[18+1] ) + "            " + 500 );
+                System.out.println(date4 + "   " + DS + "       " + (30 - Bus_seat[18+2] ) + "            " + 500 );
+                System.out.println(date4 + "   " + SC + "       " + (30 - Bus_seat[18+3] ) + "            " + 500 );
+                System.out.println(date4 + "   " + CS + "       " + (30 - Bus_seat[18+4] ) + "            " + 500 );
+                System.out.println(date4 + "   " + DC + "       " + (30 - Bus_seat[18+5] ) + "            " + 500 );
+                System.out.println(date4 + "   " + CD + "       " + (30 - Bus_seat[18+6] ) + "            " + 500 );
+                System.out.println(date5 + "   " + SD + "       " + (30 - Bus_seat[24+1] ) + "            " + 500 );
+                System.out.println(date5 + "   " + DS + "       " + (30 - Bus_seat[24+2] ) + "            " + 500 );
+                System.out.println(date5 + "   " + SC + "       " + (30 - Bus_seat[24+3] ) + "            " + 500 );
+                System.out.println(date5 + "   " + CS + "       " + (30 - Bus_seat[24+4] ) + "            " + 500 );
+                System.out.println(date5 + "   " + DC + "       " + (30 - Bus_seat[24+5] ) + "            " + 500 );
+                System.out.println(date5 + "   " + CD + "       " + (30 - Bus_seat[24+6] ) + "            " + 500 );
+                System.out.println("******************************************************************************");
+            }
 
-
-            else if(user == 4){                                                                             // exit
+            else if(user == 5){                                                                             // exit
                 break;
             }
 
