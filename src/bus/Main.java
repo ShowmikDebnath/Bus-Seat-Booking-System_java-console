@@ -215,7 +215,7 @@ public class Main
                             }
                         }
                         else if(admin_choice == 2){                                             // passenger economical information
-                            System.out.println(" Passenger--------date----destinition---seat--taka");
+                            System.out.println(" Passenger--------date----destination---seat--taka");
                             for (int a = 0; a < seat.size() ; a++ ){
                                 System.out.println( "Passenger"+(a+1) + "----" + pass_date.get(a) + "----" + destination.get(a) + "------" + seat.get(a) + "----" + taka.get(a));
                             }
@@ -450,7 +450,7 @@ public class Main
                                     System.out.println("destination: " + destination.get(seat.size() - 1));
                                     System.out.println("Seat       : " + seat.get(seat.size() - 1));
                                     System.out.println("Fare       : " + taka.get(seat.size() - 1));
-                                    System.out.println("****************************************/n");
+                                    System.out.println("****************************************\n");
                                 }
                             }
                         }

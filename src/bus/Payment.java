@@ -36,8 +36,8 @@ public class Payment{
                 System.out.print("Enter the Transaction Number: ");
                 String str = in.nextLine();
 
-                System.out.println("Thank you! Your ticket is booked.");
-                System.out.println("We will send your ticket throuh your mobile phone vai SMS.");
+                System.out.println("Thank you! Your ticket is booked.\nHave a save journey");
+                System.out.println("We will send your ticket through your mobile phone vai SMS.");
 
                 flag = true;
                 this.pass_confirm = 1;
@@ -85,4 +85,3 @@ public class Payment{
     }
 
 }
-//last class
