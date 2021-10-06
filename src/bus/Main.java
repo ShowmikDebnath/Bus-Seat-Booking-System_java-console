@@ -5,14 +5,7 @@ import java.text.*;
 public class Main
 {
     String mdate0, mdate1, mdate2, mdate3, mdate4, mdate5;
-    int tsd = 500;
-    int tds = 500;
-    int tsc = 500;
-    int tcs = 500;
-    int tdc = 500;
-    int tcd = 500;
-        
-    
+
     Main(){
 
         Date mdate;
@@ -60,12 +53,12 @@ public class Main
         String date4 = main.mdate4;
         String date5 = main.mdate5;
         
-        int tsd = 500;
-        int tds = 500;
+        int tsd = 470;
+        int tds = 470;
         int tsc = 700;
         int tcs = 700;
-        int tdc = 300;
-        int tcd = 300;
+        int tdc = 480;
+        int tcd = 480;
         
         String SD = "Sylhet to Dhaka      ";
         String DS = "Dhaka to Sylhet      ";
@@ -170,7 +163,7 @@ public class Main
             System.out.println("3. Sign out");
             System.out.println("4. All information of our service ");
             System.out.println("5. Exit");
-            System.out.print("Press a number between 1 to 4: "); int user = sc.nextInt();
+            System.out.print("Press a number between 1 to 5: "); int user = sc.nextInt();
             System.out.println("*************************\n");
 
 
@@ -344,7 +337,19 @@ public class Main
 
                             for (int pass_again=0; pass_again==0 ; ) {
 
-                                System.out.println("\n******You can book tickets*****\n");
+                                System.out.println("\nDo you want to buy tickets?\n 1. Yes \n 2. No");
+                                int buy_ticket = sc.nextInt();
+                                if(buy_ticket == 1){
+                                    //
+                                }
+                                else if(buy_ticket == 2){
+                                    System.out.println("OK");
+                                    break;
+                                }
+                                else{
+                                    System.out.println("Please enter 1 or 2");
+                                    break;
+                                }
                                 System.out.println("When you want to go :");
                                 System.out.println("1. "+date1);
                                 System.out.println("2. "+date2);
