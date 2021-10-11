@@ -291,6 +291,7 @@ public class Main
                             for (int pass_again=0; pass_again==0 ; ) {
 
                                 System.out.println("\nDo you want to buy tickets?\n 1. Yes \n 2. No");
+                                System.out.println("Enter your chose : ");
                                 int buy_ticket = sc.nextInt();
                                 if(buy_ticket == 1){
                                     //
