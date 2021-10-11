@@ -227,7 +227,7 @@ public class Admin{
             if (choice == 4){
                 break;
             }else{
-              System.out.println("please enter 1 to 4 any digit");
+              System.out.println("Please enter 1 to 4\n Otherwise it will not work");
             }
         }//for loops ends here
     } //Admin_can_change_all_information

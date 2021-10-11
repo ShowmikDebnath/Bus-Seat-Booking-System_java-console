@@ -484,7 +484,7 @@ public class Main
                                     System.out.println("Time       :" + Time.get(Time.size() - 1));
                                     System.out.println("Seat       : " + seat.get(seat.size() - 1));
                                     System.out.println("Fare       : " + taka.get(taka.size() - 1));
-                                    System.out.println("****************************************/n");
+                                    System.out.println("****************************************\n");
                                 }
                             }
                         }

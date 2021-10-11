@@ -8,7 +8,7 @@ public class Admin_pass{
     Admin_pass(){
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Plase enter a new password: ");
+        System.out.print("Please enter a new password: ");
         this.admin_pass = sc.nextLine();
         this.admin_pass_real = this.admin_pass;
     }
