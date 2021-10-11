@@ -4,75 +4,28 @@ import java.text.*;
 
 public class Main
 {
-    String mdate0, mdate1, mdate2, mdate3, mdate4, mdate5;
-
     Main(){
 
-        Date mdate;
-        Format formatter;
-        Calendar calendar = Calendar.getInstance();
 
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate0 = formatter.format(mdate);                         //date0 = today
-
-        calendar.add(Calendar.DATE, 1);
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate1 = formatter.format(mdate);                         //date1
-
-        calendar.add(Calendar.DATE, 1);
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate2 = formatter.format(mdate);                         //date2
-
-        calendar.add(Calendar.DATE, 1);
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate3 = formatter.format(mdate);                         //date3
-
-        calendar.add(Calendar.DATE, 1);
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate4 = formatter.format(mdate);                         //date4
-
-        calendar.add(Calendar.DATE, 1);
-        mdate = calendar.getTime();
-        formatter = new SimpleDateFormat("dd/MMM/yyyy");
-        mdate5 = formatter.format(mdate);                         //date5
-        
     }
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Main main = new Main();
-        
-        String date1 = main.mdate1;
-        String date2 = main.mdate2;
-        String date3 = main.mdate3;
-        String date4 = main.mdate4;
-        String date5 = main.mdate5;
-        
-        int tsd = 470;
-        int tds = 470;
-        int tsc = 700;
-        int tcs = 700;
-        int tdc = 480;
-        int tcd = 480;
-        
-        String SD = "Sylhet to Dhaka      ";
-        String DS = "Dhaka to Sylhet      ";
-        String SC = "Sylhet to Chittagong ";
-        String CS = "Chittagong to Sylhet ";
-        String DC = "Dhaka to Chittagong  ";
-        String CD = "Chittagong to Dhaka  ";
-        
+        Admin admin_object = new Admin();
+
+        String SD = admin_object.SD;
+        String DS = admin_object.DS;
+        String SC = admin_object.SC;
+        String CS = admin_object.CS;
+        String DC = admin_object.DC;
+        String CD = admin_object.CD;
+
         // vector declearation
         Vector<String> name = new Vector<>();                       // registration Vector
         Vector<String> password = new Vector<>();
         Vector<String> realName = new Vector<>();
         Vector<String> phone = new Vector<>();
-                                                                    // seat booker information storing
+        // seat booker information storing
         Vector<String> pass_Name = new Vector<>();
         Vector<String> pass_password = new Vector<>();
         Vector<String> pass_realName = new Vector<>();
@@ -81,11 +34,12 @@ public class Main
         Vector<String> destination = new Vector<>();
         Vector<Integer> seat = new Vector<>();
         Vector<Integer> taka = new Vector<>();
+        Vector<String> Time = new Vector<>();
 
         int Bus_seat[]=new int[31];     // for bus seat
         for(int i:Bus_seat){ Bus_seat[i] = 0; }   // all bus seat initializing 0 seat
         Bus_seat[1] = 4;
-        
+
         // all element declearation
 
         // registration Vector
@@ -131,10 +85,10 @@ public class Main
         pass_phone.add(phone.get(2));
         pass_phone.add(phone.get(3));
 
-        pass_date.add(date1);
-        pass_date.add(date1);
-        pass_date.add(date1);
-        pass_date.add(date1);
+        pass_date.add(admin_object.date1);
+        pass_date.add(admin_object.date1);
+        pass_date.add(admin_object.date1);
+        pass_date.add(admin_object.date1);
 
         destination.add("Sy->Dh");
         destination.add("Sy->Dh");
@@ -146,12 +100,15 @@ public class Main
         seat.add(1);
         seat.add(1);
 
-        taka.add(500);
-        taka.add(500);
-        taka.add(500);
-        taka.add(500);
+        taka.add(470);
+        taka.add(470);
+        taka.add(470);
+        taka.add(470);
 
-
+        Time.add(admin_object.time11);
+        Time.add(admin_object.time11);
+        Time.add(admin_object.time11);
+        Time.add(admin_object.time11);
 
         for (int i = 0; i == 0 ; ){
             System.out.println("Registered people : "+ name.size());
@@ -179,7 +136,7 @@ public class Main
                 int size = name.size();                                     // Vector size declearation
 
                 for (int j = 0; j < size ; j++ ){
-                    if(userName.equals(name.get(j))){                     // If there is a match with userName to other user name , it will be not registerd
+                    if(userName.equals(name.get(j)) && userName.equals("admin")){                     // If there is a match with userName to other user name , it will be not registerd
                         System.out.println("\n\t\t\t\t\t\t\tPlease enter a new user name. This is used by other. You are not registared\n");
                         name_temp = userName;                            // if there is any mathch , the matched information will store in name_temp
                     }
@@ -212,20 +169,23 @@ public class Main
 
             else if(user == 2){                                            // log in
                 String y = sc.nextLine();
-                System.out.print("User name: "); String name2 = sc.nextLine();
-                System.out.print("password: "); String pass2 = sc.nextLine();
+                System.out.print("User name: ");  String name2 = sc.nextLine();
+                System.out.print("password: ");   String pass2 = sc.nextLine();
 
                 String temp_name2 = "" ; String temp_pass2 = "";
                 int size3 = name.size();
 
-                if( (name2.equals("a") && (pass2.equals("1"))) ){                  // admin log in
+                Admin_pass newpass1 = new Admin_pass("2");
+
+                if( (name2.equals("a") && (pass2.equals(newpass1.admin_pass_real))) ){                  // admin log in
                     System.out.println("View history and All information:");
                     System.out.println("**********************************************");
                     System.out.println("1. All registared member's information:");
                     System.out.println("2. All information of seat booking: ");
                     System.out.println("3. All information delete: ");
-                    System.out.println("4. Change the fare");
-                    System.out.println("5. Exit");
+                    System.out.println("4. Change the Service information");
+                    System.out.println("5. Change password");
+                    System.out.println("6. Exit");
                     System.out.println("**********************************************");
 
                     for (int again = 0; again == 0; ){
@@ -282,43 +242,36 @@ public class Main
                                 destination.clear();
                                 seat.clear();
                                 taka.clear();
+                                Time.clear();
                             }
                             else{
                                 System.out.println("OK");
                             }
                         }
-                        else if(admin_choice==4){
-                            System.out.println("1.Change Fare of "+SD); 
-                            System.out.println("2.Change Fare of "+DS); 
-                            System.out.println("3.Change Fare of "+SC); 
-                            System.out.println("4.Change Fare of "+CS); 
-                            System.out.println("5.Change Fare of "+DC); 
-                            System.out.println("6.Change Fare of "+CD); 
-                            System.out.print("Please enter a number between 1 to 6: ");
-                            int change_fare = sc.nextInt();
-                                 if(change_fare == 1){ System.out.print("Put the Fare " + SD + " = ") ; tsd = sc.nextInt(); }
-                            else if(change_fare == 2){ System.out.print("Put the Fare " + DS + " = ") ; tds = sc.nextInt(); }
-                            else if(change_fare == 3){ System.out.print("Put the Fare " + SC + " = ") ; tsc = sc.nextInt(); }
-                            else if(change_fare == 4){ System.out.print("Put the Fare " + CS + " = ") ; tcs = sc.nextInt(); }
-                            else if(change_fare == 5){ System.out.print("Put the Fare " + DC + " = ") ; tdc = sc.nextInt(); }
-                            else if(change_fare == 6){ System.out.print("Put the Fare " + CD + " = ") ; tcd = sc.nextInt(); }
-                            else{System.out.println("\nYou enter a wrong number. Please try again. ");}
+                        else if(admin_choice==4){                           // Admin change information
+                            Admin admin_change = new Admin("choice");
                         }
-                        else if(admin_choice==5){
+
+                        else if(admin_choice==5){                           // password change for admin
+                            Admin_pass newpass = new Admin_pass();
+                        }
+
+                        else if(admin_choice==6){
                             break;
                         }
-                        
+
                         else{
                             System.out.println("\t\t\t\t\t\t\tPlease enter a valid number ");
                         }
 
-                        System.out.println("View history and All information:");
+                        System.out.println("\n\t\t\t\t\t\t Admin :");
                         System.out.println("**********************************************");
                         System.out.println("1. All registared member's information:");
                         System.out.println("2. All information of seat booking: ");
                         System.out.println("3. All information delete: ");
-                        System.out.println("4. Change the fare");
-                        System.out.println("5. Exit");
+                        System.out.println("4. Change the Service information");
+                        System.out.println("5. Change password");
+                        System.out.println("6. Exit");
                         System.out.println("**********************************************");
                     }
                 }
@@ -350,28 +303,33 @@ public class Main
                                     System.out.println("Please enter 1 or 2");
                                     break;
                                 }
+
+                                // Admin obj = new Admin(jekuno integer number, jetar bebohar hobe na Admin e ); -- eta sudhu variable declear er jonno
+
                                 System.out.println("When you want to go :");
-                                System.out.println("1. "+date1);
-                                System.out.println("2. "+date2);
-                                System.out.println("3. "+date3);
-                                System.out.println("4. "+date4);
-                                System.out.println("5. "+date5);
+                                System.out.println("1. "+admin_object.date1);
+                                System.out.println("2. "+admin_object.date2);
+                                System.out.println("3. "+admin_object.date3);
+                                System.out.println("4. "+admin_object.date4);
+                                System.out.println("5. "+admin_object.date5);
                                 System.out.println("6. Log out");
 
                                 System.out.print("Enter date between 1 to 6: "); int user_date = sc.nextInt();
 
                                 String object_date = "";
-                                String object_bus = "";
-                                int object_seat = 0;
-                                int object_taka = 0;
+                                String object_bus  = "";
+                                int object_seat    = 0 ;
+                                int object_taka    = 0 ;
+                                String object_time = "";
 
 
 
                                 if (user_date == 1){
-                                    
-                                    
 
-                                    Date1 d1 = new Date1(date1, Bus_seat[1], Bus_seat[2], Bus_seat[3], Bus_seat[4], Bus_seat[5], Bus_seat[6], tsd, tds, tsc, tcs, tdc, tcd);
+                                    Date1 d1 = new Date1(admin_object.date1, Bus_seat[1], Bus_seat[2], Bus_seat[3], Bus_seat[4], Bus_seat[5], Bus_seat[6]
+                                            , admin_object.fare11, admin_object.fare12, admin_object.fare13, admin_object.fare14, admin_object.fare15, admin_object.fare16
+                                            , admin_object.time11, admin_object.time12, admin_object.time13, admin_object.time14, admin_object.time15, admin_object.time16);
+
                                     Payment pay = new Payment();
                                     if(pay.confirm == 1){
                                         Bus_seat[1] += d1.seat1;
@@ -380,10 +338,11 @@ public class Main
                                         Bus_seat[4] += d1.seat4;
                                         Bus_seat[5] += d1.seat5;
                                         Bus_seat[6] += d1.seat6;
-                                        object_date = date1;
+                                        object_date = admin_object.date1;
                                         object_bus = d1.destination;   // Transfer the destination (String) value from Payment class
                                         object_seat = d1.seat;         // Transfer the seat(int) value from Payment class
                                         object_taka = d1.taka;         // Transfer the taka(int) value from Payment class
+                                        object_time = d1.time;
                                     }
                                     else{
                                         System.out.println("Your seat is not booked");
@@ -392,86 +351,101 @@ public class Main
                                 }
                                 else if(user_date == 2){
 
-		                        Date2 d2 = new Date2(date2, Bus_seat[6+1], Bus_seat[6+2], Bus_seat[6+3], Bus_seat[6+4], Bus_seat[6+5], Bus_seat[6+6], tsd, tds, tsc, tcs, tdc, tcd);
-		                        Payment pay = new Payment();
-		                        if(pay.confirm == 1){
-		                            Bus_seat[6+1] += d2.seat1;
-		                            Bus_seat[6+2] += d2.seat2;
-		                            Bus_seat[6+3] += d2.seat3;
-		                            Bus_seat[6+4] += d2.seat4;
-		                            Bus_seat[6+5] += d2.seat5;
-		                            Bus_seat[6+6] += d2.seat6;
-		                            object_date = date2;
-		                            object_bus = d2.destination;   // Transfer the destination (String) value from Payment class
-		                            object_seat = d2.seat;         // Transfer the seat(int) value from Payment class
-		                            object_taka = d2.taka;         // Transfer the taka(int) value from Payment class
-		                        }
-		                        else{
-		                            System.out.println("Your seat is not booked");
-		                        }
+                                    Date2 d2 = new Date2(admin_object.date2, Bus_seat[6+1], Bus_seat[6+2], Bus_seat[6+3], Bus_seat[6+4], Bus_seat[6+5], Bus_seat[6+6]
+                                            , admin_object.fare21, admin_object.fare22, admin_object.fare23, admin_object.fare24, admin_object.fare25, admin_object.fare26
+                                            , admin_object.time21, admin_object.time22, admin_object.time23, admin_object.time24, admin_object.time25, admin_object.time26);
+
+                                    Payment pay = new Payment();
+                                    if(pay.confirm == 1){
+                                        Bus_seat[6+1] += d2.seat1;
+                                        Bus_seat[6+2] += d2.seat2;
+                                        Bus_seat[6+3] += d2.seat3;
+                                        Bus_seat[6+4] += d2.seat4;
+                                        Bus_seat[6+5] += d2.seat5;
+                                        Bus_seat[6+6] += d2.seat6;
+                                        object_date = admin_object.date2;
+                                        object_bus = d2.destination;   // Transfer the destination (String) value from Payment class
+                                        object_seat = d2.seat;         // Transfer the seat(int) value from Payment class
+                                        object_taka = d2.taka;         // Transfer the taka(int) value from Payment class
+                                        object_time = d2.time;
+                                    }
+                                    else{
+                                        System.out.println("Your seat is not booked");
+                                    }
 
                                 }
                                 else if(user_date == 3){
 
-		                        Date3 d3 = new Date3(date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6], tsd, tds, tsc, tcs, tdc, tcd);
-		                        Payment pay = new Payment();
-		                        if(pay.confirm == 1){
-		                            Bus_seat[12+1] += d3.seat1;
-		                            Bus_seat[12+2] += d3.seat2;
-		                            Bus_seat[12+3] += d3.seat3;
-		                            Bus_seat[12+4] += d3.seat4;
-		                            Bus_seat[12+5] += d3.seat5;
-		                            Bus_seat[12+6] += d3.seat6;
-		                            object_date = date3;
-		                            object_bus = d3.destination;   // Transfer the destination (String) value from Payment class
-		                            object_seat = d3.seat;         // Transfer the seat(int) value from Payment class
-		                            object_taka = d3.taka;         // Transfer the taka(int) value from Payment class
-		                        }
-		                        else{
-		                            System.out.println("Your seat is not booked");
-		                        }
+                                    Date3 d3 = new Date3(admin_object.date3, Bus_seat[12+1], Bus_seat[12+2], Bus_seat[12+3], Bus_seat[12+4], Bus_seat[12+5], Bus_seat[12+6]
+                                            , admin_object.fare31, admin_object.fare32, admin_object.fare33, admin_object.fare34, admin_object.fare35, admin_object.fare36
+                                            , admin_object.time31, admin_object.time32, admin_object.time33, admin_object.time34, admin_object.time35, admin_object.time36);
+
+                                    Payment pay = new Payment();
+                                    if(pay.confirm == 1){
+                                        Bus_seat[12+1] += d3.seat1;
+                                        Bus_seat[12+2] += d3.seat2;
+                                        Bus_seat[12+3] += d3.seat3;
+                                        Bus_seat[12+4] += d3.seat4;
+                                        Bus_seat[12+5] += d3.seat5;
+                                        Bus_seat[12+6] += d3.seat6;
+                                        object_date = admin_object.date3;
+                                        object_bus = d3.destination;   // Transfer the destination (String) value from Payment class
+                                        object_seat = d3.seat;         // Transfer the seat(int) value from Payment class
+                                        object_taka = d3.taka;         // Transfer the taka(int) value from Payment class
+                                        object_time = d3.time;
+                                    }
+                                    else{
+                                        System.out.println("Your seat is not booked");
+                                    }
 
                                 }
                                 else if(user_date == 4){
 
-		                        Date4 d4 = new Date4(date4, Bus_seat[18+1], Bus_seat[18+2], Bus_seat[18+3], Bus_seat[18+4], Bus_seat[18+5], Bus_seat[18+6], tsd, tds, tsc, tcs, tdc, tcd);
-		                        Payment pay = new Payment();
-		                        if(pay.confirm == 1){
-		                            Bus_seat[18+1] += d4.seat1;
-		                            Bus_seat[18+2] += d4.seat2;
-		                            Bus_seat[18+3] += d4.seat3;
-		                            Bus_seat[18+4] += d4.seat4;
-		                            Bus_seat[18+5] += d4.seat5;
-		                            Bus_seat[18+6] += d4.seat6;
-		                            object_date = date4;
-		                            object_bus = d4.destination;   // Transfer the destination (String) value from Payment class
-		                            object_seat = d4.seat;         // Transfer the seat(int) value from Payment class
-		                            object_taka = d4.taka;         // Transfer the taka(int) value from Payment class
-		                        }
-		                        else{
-		                            System.out.println("Your seat is not booked");
-		                        }
+                                    Date4 d4 = new Date4(admin_object.date4, Bus_seat[18+1], Bus_seat[18+2], Bus_seat[18+3], Bus_seat[18+4], Bus_seat[18+5], Bus_seat[18+6]
+                                            , admin_object.fare41, admin_object.fare42, admin_object.fare43, admin_object.fare44, admin_object.fare45, admin_object.fare46
+                                            , admin_object.time41, admin_object.time42, admin_object.time43, admin_object.time44, admin_object.time45, admin_object.time46);
+
+                                    Payment pay = new Payment();
+                                    if(pay.confirm == 1){
+                                        Bus_seat[18+1] += d4.seat1;
+                                        Bus_seat[18+2] += d4.seat2;
+                                        Bus_seat[18+3] += d4.seat3;
+                                        Bus_seat[18+4] += d4.seat4;
+                                        Bus_seat[18+5] += d4.seat5;
+                                        Bus_seat[18+6] += d4.seat6;
+                                        object_date = admin_object.date4;
+                                        object_bus = d4.destination;   // Transfer the destination (String) value from Payment class
+                                        object_seat = d4.seat;         // Transfer the seat(int) value from Payment class
+                                        object_taka = d4.taka;         // Transfer the taka(int) value from Payment class
+                                        object_time = d4.time;
+                                    }
+                                    else{
+                                        System.out.println("Your seat is not booked");
+                                    }
 
                                 }
                                 else if(user_date == 5){
 
-		                        Date5 d5 = new Date5(date5, Bus_seat[24+1], Bus_seat[24+2], Bus_seat[24+3], Bus_seat[24+4], Bus_seat[24+5], Bus_seat[24+6], tsd, tds, tsc, tcs, tdc, tcd);
-		                        Payment pay = new Payment();
-		                        if(pay.confirm == 1){
-		                            Bus_seat[24+1] += d5.seat1;
-		                            Bus_seat[24+2] += d5.seat2;
-		                            Bus_seat[24+3] += d5.seat3;
-		                            Bus_seat[24+4] += d5.seat4;
-		                            Bus_seat[24+5] += d5.seat5;
-		                            Bus_seat[24+6] += d5.seat6;
-		                            object_date = date5;
-		                            object_bus = d5.destination;   // Transfer the destination (String) value from Payment class
-		                            object_seat = d5.seat;         // Transfer the seat(int) value from Payment class
-		                            object_taka = d5.taka;         // Transfer the taka(int) value from Payment class
-		                        }
-		                        else{
-		                            System.out.println("Your seat is not booked");
-		                        }
+                                    Date5 d5 = new Date5(admin_object.date5, Bus_seat[24+1], Bus_seat[24+2], Bus_seat[24+3], Bus_seat[24+4], Bus_seat[24+5], Bus_seat[24+6]
+                                            , admin_object.fare51, admin_object.fare52, admin_object.fare53, admin_object.fare54, admin_object.fare55, admin_object.fare56
+                                            , admin_object.time51, admin_object.time52, admin_object.time53, admin_object.time54, admin_object.time55, admin_object.time56);
+                                    Payment pay = new Payment();
+                                    if(pay.confirm == 1){
+                                        Bus_seat[24+1] += d5.seat1;
+                                        Bus_seat[24+2] += d5.seat2;
+                                        Bus_seat[24+3] += d5.seat3;
+                                        Bus_seat[24+4] += d5.seat4;
+                                        Bus_seat[24+5] += d5.seat5;
+                                        Bus_seat[24+6] += d5.seat6;
+                                        object_date = admin_object.date5;
+                                        object_bus = d5.destination;   // Transfer the destination (String) value from Payment class
+                                        object_seat = d5.seat;         // Transfer the seat(int) value from Payment class
+                                        object_taka = d5.taka;         // Transfer the taka(int) value from Payment class
+                                        object_time = d5.time;
+                                    }
+                                    else{
+                                        System.out.println("Your seat is not booked");
+                                    }
 
                                 }
 
@@ -488,6 +462,7 @@ public class Main
                                     destination.add ( object_bus );
                                     seat.add ( object_seat );
                                     taka.add ( object_taka );
+                                    Time.add ( object_time );
 
                                     System.out.println("You seat is booked");
                                 }
@@ -502,11 +477,12 @@ public class Main
                                 if(pay.confirm == 1 && object_seat > 0 && object_taka > 0) {
                                     System.out.println("****************************************");
                                     System.out.println("You enterd:");
-                                    System.out.println("Name       : " + pass_Name.get(seat.size() - 1));
-                                    System.out.println("Date       : " + pass_date.get(seat.size() - 1));
-                                    System.out.println("destination: " + destination.get(seat.size() - 1));
+                                    System.out.println("Name       : " + pass_Name.get(pass_Name.size() - 1));
+                                    System.out.println("Date       : " + pass_date.get(pass_date.size() - 1));
+                                    System.out.println("destination: " + destination.get(destination.size() - 1));
+                                    System.out.println("Time       :" + Time.get(Time.size() - 1));
                                     System.out.println("Seat       : " + seat.get(seat.size() - 1));
-                                    System.out.println("Fare       : " + taka.get(seat.size() - 1));
+                                    System.out.println("Fare       : " + taka.get(taka.size() - 1));
                                     System.out.println("****************************************/n");
                                 }
                             }
@@ -545,41 +521,45 @@ public class Main
                     System.out.println("\n\t\t\t\t\t\t\tYou are not registared\n");
                 }
             }
-            
+
             else if(user == 4){
-                
+
                 System.out.println("******************************************************************************");
-                System.out.println("   Date       " + "      Destination    "+"   Available Seat   " + " Fare ");
-                System.out.println(date1 + "   " + SD + "       " + (30 - Bus_seat[1] ) + "            " + tsd );
-                System.out.println(date1 + "   " + DS + "       " + (30 - Bus_seat[2] ) + "            " + tds );
-                System.out.println(date1 + "   " + SC + "       " + (30 - Bus_seat[3] ) + "            " + tcs );
-                System.out.println(date1 + "   " + CS + "       " + (30 - Bus_seat[4] ) + "            " + tsc );
-                System.out.println(date1 + "   " + DC + "       " + (30 - Bus_seat[5] ) + "            " + tdc );
-                System.out.println(date1 + "   " + CD + "       " + (30 - Bus_seat[6] ) + "            " + tcd +"\n");
-                System.out.println(date2 + "   " + SD + "       " + (30 - Bus_seat[6+1] ) + "            " + tsd );
-                System.out.println(date2 + "   " + DS + "       " + (30 - Bus_seat[6+2] ) + "            " + tds );
-                System.out.println(date2 + "   " + SC + "       " + (30 - Bus_seat[6+3] ) + "            " + tcs );
-                System.out.println(date2 + "   " + CS + "       " + (30 - Bus_seat[6+4] ) + "            " + tsc );
-                System.out.println(date2 + "   " + DC + "       " + (30 - Bus_seat[6+5] ) + "            " + tdc );
-                System.out.println(date2 + "   " + CD + "       " + (30 - Bus_seat[6+6] ) + "            " + tcd +"\n");
-                System.out.println(date3 + "   " + SD + "       " + (30 - Bus_seat[12+1] ) + "            " + tsd );
-                System.out.println(date3 + "   " + DS + "       " + (30 - Bus_seat[12+2] ) + "            " + tds );
-                System.out.println(date3 + "   " + SC + "       " + (30 - Bus_seat[12+3] ) + "            " + tcs );
-                System.out.println(date3 + "   " + CS + "       " + (30 - Bus_seat[12+4] ) + "            " + tsc );
-                System.out.println(date3 + "   " + DC + "       " + (30 - Bus_seat[12+5] ) + "            " + tdc );
-                System.out.println(date3 + "   " + CD + "       " + (30 - Bus_seat[12+6] ) + "            " + tcd +"\n");
-                System.out.println(date4 + "   " + SD + "       " + (30 - Bus_seat[18+1] ) + "            " + tsd );
-                System.out.println(date4 + "   " + DS + "       " + (30 - Bus_seat[18+2] ) + "            " + tds );
-                System.out.println(date4 + "   " + SC + "       " + (30 - Bus_seat[18+3] ) + "            " + tcs );
-                System.out.println(date4 + "   " + CS + "       " + (30 - Bus_seat[18+4] ) + "            " + tsc );
-                System.out.println(date4 + "   " + DC + "       " + (30 - Bus_seat[18+5] ) + "            " + tdc );
-                System.out.println(date4 + "   " + CD + "       " + (30 - Bus_seat[18+6] ) + "            " + tcd +"\n");
-                System.out.println(date5 + "   " + SD + "       " + (30 - Bus_seat[24+1] ) + "            " + tsd );
-                System.out.println(date5 + "   " + DS + "       " + (30 - Bus_seat[24+2] ) + "            " + tds );
-                System.out.println(date5 + "   " + SC + "       " + (30 - Bus_seat[24+3] ) + "            " + tcs );
-                System.out.println(date5 + "   " + CS + "       " + (30 - Bus_seat[24+4] ) + "            " + tsc );
-                System.out.println(date5 + "   " + DC + "       " + (30 - Bus_seat[24+5] ) + "            " + tdc );
-                System.out.println(date5 + "   " + CD + "       " + (30 - Bus_seat[24+6] ) + "            " + tcd );
+                System.out.println("   Date       " + "  Destination     "+"   Available Seat    " + " Time " + "            Fare \n");
+                System.out.println( admin_object.date1 + "   " + SD + "       " + (30 - Bus_seat[1] ) + "            " + admin_object.time11 + "            " + admin_object.fare11 );
+                System.out.println( admin_object.date1 + "   " + DS + "       " + (30 - Bus_seat[2] ) + "            " + admin_object.time12 + "            " + admin_object.fare12 );
+                System.out.println( admin_object.date1 + "   " + SC + "       " + (30 - Bus_seat[3] ) + "            " + admin_object.time13 + "            " + admin_object.fare13 );
+                System.out.println( admin_object.date1 + "   " + CS + "       " + (30 - Bus_seat[4] ) + "            " + admin_object.time14 + "            " + admin_object.fare14 );
+                System.out.println( admin_object.date1 + "   " + DC + "       " + (30 - Bus_seat[5] ) + "            " + admin_object.time15 + "            " + admin_object.fare15 );
+                System.out.println( admin_object.date1 + "   " + CD + "       " + (30 - Bus_seat[6] ) + "            " + admin_object.time16 + "            " + admin_object.fare16 + "\n");
+
+                System.out.println( admin_object.date2 + "   " + SD + "       " + (30 - Bus_seat[7] ) + "            " + admin_object.time21 + "            " + admin_object.fare21 );
+                System.out.println( admin_object.date2 + "   " + DS + "       " + (30 - Bus_seat[8] ) + "            " + admin_object.time22 + "            " + admin_object.fare22 );
+                System.out.println( admin_object.date2 + "   " + SC + "       " + (30 - Bus_seat[9] ) + "            " + admin_object.time23 + "            " + admin_object.fare23 );
+                System.out.println( admin_object.date2 + "   " + CS + "       " + (30 - Bus_seat[10] ) + "            " + admin_object.time24 + "            " + admin_object.fare24 );
+                System.out.println( admin_object.date2 + "   " + DC + "       " + (30 - Bus_seat[11] ) + "            " + admin_object.time25 + "            " + admin_object.fare25 );
+                System.out.println( admin_object.date2 + "   " + CD + "       " + (30 - Bus_seat[12] ) + "            " + admin_object.time26 + "            " + admin_object.fare26 + "\n");
+
+                System.out.println( admin_object.date3 + "   " + SD + "       " + (30 - Bus_seat[13] ) + "            " + admin_object.time31 + "            " + admin_object.fare31 );
+                System.out.println( admin_object.date3 + "   " + DS + "       " + (30 - Bus_seat[14] ) + "            " + admin_object.time32 + "            " + admin_object.fare32 );
+                System.out.println( admin_object.date3 + "   " + SC + "       " + (30 - Bus_seat[15] ) + "            " + admin_object.time33 + "            " + admin_object.fare33 );
+                System.out.println( admin_object.date3 + "   " + CS + "       " + (30 - Bus_seat[16] ) + "            " + admin_object.time34 + "            " + admin_object.fare34 );
+                System.out.println( admin_object.date3 + "   " + DC + "       " + (30 - Bus_seat[17] ) + "            " + admin_object.time35 + "            " + admin_object.fare35 );
+                System.out.println( admin_object.date3 + "   " + CD + "       " + (30 - Bus_seat[18] ) + "            " + admin_object.time36 + "            " + admin_object.fare36 + "\n");
+
+                System.out.println( admin_object.date4 + "   " + SD + "       " + (30 - Bus_seat[19] ) + "            " + admin_object.time41 + "            " + admin_object.fare41 );
+                System.out.println( admin_object.date4 + "   " + DS + "       " + (30 - Bus_seat[20] ) + "            " + admin_object.time42 + "            " + admin_object.fare42 );
+                System.out.println( admin_object.date4 + "   " + SC + "       " + (30 - Bus_seat[21] ) + "            " + admin_object.time43 + "            " + admin_object.fare43 );
+                System.out.println( admin_object.date4 + "   " + CS + "       " + (30 - Bus_seat[22] ) + "            " + admin_object.time44 + "            " + admin_object.fare44 );
+                System.out.println( admin_object.date4 + "   " + DC + "       " + (30 - Bus_seat[23] ) + "            " + admin_object.time45 + "            " + admin_object.fare45 );
+                System.out.println( admin_object.date4 + "   " + CD + "       " + (30 - Bus_seat[24] ) + "            " + admin_object.time46 + "            " + admin_object.fare46 + "\n");
+
+                System.out.println( admin_object.date5 + "   " + SD + "       " + (30 - Bus_seat[25] ) + "            " + admin_object.time51 + "            " + admin_object.fare51 );
+                System.out.println( admin_object.date5 + "   " + DS + "       " + (30 - Bus_seat[26] ) + "            " + admin_object.time52 + "            " + admin_object.fare52 );
+                System.out.println( admin_object.date5 + "   " + SC + "       " + (30 - Bus_seat[27] ) + "            " + admin_object.time53 + "            " + admin_object.fare53 );
+                System.out.println( admin_object.date5 + "   " + CS + "       " + (30 - Bus_seat[28] ) + "            " + admin_object.time54 + "            " + admin_object.fare54 );
+                System.out.println( admin_object.date5 + "   " + DC + "       " + (30 - Bus_seat[29] ) + "            " + admin_object.time55 + "            " + admin_object.fare55 );
+                System.out.println( admin_object.date5 + "   " + CD + "       " + (30 - Bus_seat[30] ) + "            " + admin_object.time56 + "            " + admin_object.fare56 );
                 System.out.println("******************************************************************************");
             }
 
