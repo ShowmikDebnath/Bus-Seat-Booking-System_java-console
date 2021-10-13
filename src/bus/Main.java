@@ -161,25 +161,66 @@ public class Main
                 else if( name_temp.equals("") && pass_temp.equals("") ){     // if name_temp and pass_temp remains null then it will registared
 
 
-                    System.out.print("Real name: ");   String realname = sc.nextLine();     // Real name enter
-                    System.out.print("Phone: 01");     String ph = sc.nextLine();           // Phone enter
+                    System.out.print("Real name: "); 
+                    String realname = sc.nextLine();     // Real name enter
+                    System.out.print("Phone: 01");     
+                    String ph = sc.nextLine();           // Phone enter
+                    
+                    if(ph.length() == 9){
+                        if ( (ph.charAt(0) == '0' || ph.charAt(0) == '1' || ph.charAt(0) == '2' || ph.charAt(0) == '3' || ph.charAt(0) == '4'
+                        || ph.charAt(0) == '5' || ph.charAt(0) == '6' || ph.charAt(0) == '7' || ph.charAt(0) == '8' || ph.charAt(0) == '9' ) &&
+                        
+                        (ph.charAt(1) == '0' || ph.charAt(1) == '1' || ph.charAt(1) == '2' || ph.charAt(1) == '3' || ph.charAt(1) == '4'
+                        || ph.charAt(1) == '5' || ph.charAt(1) == '6' || ph.charAt(1) == '7' || ph.charAt(1) == '8' || ph.charAt(1) == '9' ) &&
+                        
+                        (ph.charAt(2) == '0' || ph.charAt(2) == '1' || ph.charAt(2) == '2' || ph.charAt(2) == '3' || ph.charAt(2) == '4'
+                        || ph.charAt(2) == '5' || ph.charAt(2) == '6' || ph.charAt(2) == '7' || ph.charAt(2) == '8' || ph.charAt(2) == '9' ) &&
+                        
+                        (ph.charAt(3) == '0' || ph.charAt(3) == '1' || ph.charAt(3) == '2' || ph.charAt(3) == '3' || ph.charAt(3) == '4'
+                        || ph.charAt(3) == '5' || ph.charAt(3) == '6' || ph.charAt(3) == '7' || ph.charAt(3) == '8' || ph.charAt(3) == '9' ) &&
+                        
+                        (ph.charAt(4) == '0' || ph.charAt(4) == '1' || ph.charAt(4) == '2' || ph.charAt(4) == '3' || ph.charAt(4) == '4'
+                        || ph.charAt(4) == '5' || ph.charAt(4) == '6' || ph.charAt(4) == '7' || ph.charAt(4) == '8' || ph.charAt(4) == '9' ) &&
+                        
+                        (ph.charAt(5) == '0' || ph.charAt(5) == '1' || ph.charAt(5) == '2' || ph.charAt(5) == '3' || ph.charAt(5) == '4'
+                        || ph.charAt(5) == '5' || ph.charAt(5) == '6' || ph.charAt(5) == '7' || ph.charAt(5) == '8' || ph.charAt(5) == '9' ) &&
+                        
+                        (ph.charAt(6) == '0' || ph.charAt(6) == '1' || ph.charAt(6) == '2' || ph.charAt(6) == '3' || ph.charAt(6) == '4'
+                        || ph.charAt(6) == '5' || ph.charAt(6) == '6' || ph.charAt(6) == '7' || ph.charAt(6) == '8' || ph.charAt(6) == '9' ) &&
+                        
+                        (ph.charAt(7) == '0' || ph.charAt(7) == '1' || ph.charAt(7) == '2' || ph.charAt(7) == '3' || ph.charAt(7) == '4'
+                        || ph.charAt(7) == '5' || ph.charAt(7) == '6' || ph.charAt(7) == '7' || ph.charAt(7) == '8' || ph.charAt(7) == '9' ) &&
+                        
+                        (ph.charAt(8) == '0' || ph.charAt(8) == '1' || ph.charAt(8) == '2' || ph.charAt(8) == '3' || ph.charAt(8) == '4'
+                        || ph.charAt(8) == '5' || ph.charAt(8) == '6' || ph.charAt(8) == '7' || ph.charAt(8) == '8' || ph.charAt(8) == '9' ) 
+                        )
+                        {
+                            String full_number = "01" + ph;
+                            name.add(userName);
+                            password.add(pass);
+                            realName.add(realname);
+                            phone.add(full_number);
 
-                    realName.add(realname);
-                    phone.add(ph);
-                    name.add(userName);
-                    password.add(pass);
+                            System.out.println("\n\t\t\t\t\t\t\tYou are registared\n");
 
-                    System.out.println("\n\t\t\t\t\t\t\tYou are registared\n");
-
-                    System.out.println("\n\nUser name  : "+name.get(size));
-                    System.out.println("Password   : "+password.get(size));
-                    System.out.println("Real name  : "+realName.get(size));
-                    System.out.println("Phone      : "+phone.get(size));
-                    System.out.println("\n");
+                            System.out.println("\n\nUser name  : "+name.get(size));
+                            System.out.println("Password   : "+password.get(size));
+                            System.out.println("Real name  : "+realName.get(size));
+                            System.out.println("Phone      : "+phone.get(size));
+                            System.out.println("\n");
+                        } //ph.length() == 9
+                        else{
+                            System.out.println("Please entered a valid number. You are not registerd.");
+                        }
+                    } // if(ph.length() == 9)
+                    else{
+                        System.out.println("You entered a wrong number. You are not registared.");
+                    }
+                    
                     name_temp = "";                                         // name_temp and pass_temp should be changed in null
                     pass_temp = "";
-                }
-            }
+                }   // else if( name_temp.equals("") && pass_temp.equals("") )
+            }  //user == 1
 
             else if(user == 2){                                            // log in
                 String y = sc.nextLine();
@@ -200,34 +241,16 @@ public class Main
 
                         if(admin_choice == 1){                                                   // Passenger information
                             //for (int p = 0; p < size3 ; p++ ){
-                            for (int p = 0; p < seat.size() ; p++ ){
-                                System.out.println( "Passenger"+(p+1) + "----" + realName.get(p)+ "----" + phone.get(p) );
+                            for (int p = 0; p < name.size() ; p++ ){
+                                System.out.println( "Member"+(p+1) + "----" + realName.get(p)+ "----" + phone.get(p) );
                             }
                         }
                         else if(admin_choice == 2){                                             // passenger economical information
-                            System.out.println(" Passenger--------date----destinition---seat--taka");
+                            System.out.println(" Passenger--------date----destinition---seat--taka---user name");
                             for (int a = 0; a < seat.size() ; a++ ){
-                                System.out.println( "Passenger"+(a+1) + "----" + pass_date.get(a) + "----" + destination.get(a) + "------" + seat.get(a) + "----" + taka.get(a));
+                                System.out.println( "Passenger"+(a+1) + "----" + pass_date.get(a) + "----" + destination.get(a) + "------" + seat.get(a) + "----" + taka.get(a) + "----" + pass_Name.get(a));
                             }
                             System.out.println("\nseat size = " + seat.size());               // size of seat Vector
-
-                            System.out.println("Do you want to search a Passenger \n 1. Yes \n 2. No "); // yes or no in searching passenger
-                            int admin_ChoiceSearchUserName = sc.nextInt();
-
-                            if(admin_ChoiceSearchUserName == 1 ){                             // admin search passenger
-                                System.out.println("\n\t\t\t\t\t\t You can search Passenger information from the list ");
-                                System.out.println("**************************************************************");
-                                System.out.print("Passenger number: "); int admin_user = sc.nextInt();
-                                System.out.println("**************************************************************");
-                                System.out.println( "Passenger"+(admin_user) + "----" + pass_realName.get(admin_user-1)+ "----" + pass_phone.get(admin_user-1) );
-                                System.out.println("**************************************************************");
-                            }
-                            else if(admin_ChoiceSearchUserName == 2){
-                                System.out.println("\n\t OK \n");
-                            }
-                            else{
-                                System.out.println("Please enter a valid number");
-                            }
                         }
 
                         else if(admin_choice == 3){
@@ -523,7 +546,7 @@ public class Main
             else if(user == 4){
                 
                 System.out.println("******************************************************************************");
-                System.out.println("   Date       " + "  Destination     "+"   Available Seat    " + " Time " + "            Fare \n");
+                System.out.println("   Date       " + "  Destination     "+"   Available Seat    " + "   Time " + "            Fare \n");
                 System.out.println( admin_object.date1 + "   " + SD + "       " + (30 - Bus_seat[ 1] ) + "            " + admin_object.time11 + "            " + admin_object.fare11 );
                 System.out.println( admin_object.date1 + "   " + DS + "       " + (30 - Bus_seat[ 2] ) + "            " + admin_object.time12 + "            " + admin_object.fare12 );
                 System.out.println( admin_object.date1 + "   " + SC + "       " + (30 - Bus_seat[ 3] ) + "            " + admin_object.time13 + "            " + admin_object.fare13 );
