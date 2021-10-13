@@ -207,28 +207,88 @@ public class Admin{
     Admin(String Admin_can_change_all_information){
         Scanner sc = new Scanner(System.in);
         for (int again = 0; again==0; ){
-            System.out.println("What do you want to change ?");
-            System.out.println("1. Date");
-            System.out.println("2. Time");
-            System.out.println("3. Fare");
-            System.out.println("4. exit");
-            System.out.print("please enter a number between 1 to 4: "); 
+            
+            System.out.println("Do you want to change any fare of any roots?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            System.out.print("please enter a number between 1 to 2: "); 
             int choice = sc.nextInt();
-        
-            if (choice == 1){
-                //
-            }
-            if (choice == 2){
-                //
-            }
-            if (choice == 3){
-                //
-            }
-            if (choice == 4){
+            if(choice == 1){
+                System.out.println("*******************************************************************");
+                System.out.println("For which root you want to change fare ");
+                System.out.println("1. "+SD);
+                System.out.println("2. "+DS);
+                System.out.println("3. "+SC);
+                System.out.println("4. "+CS);
+                System.out.println("5. "+DC);
+                System.out.println("6. "+CD);
+                System.out.println("7. Don't want to change any fare");
+                System.out.print("Enter a number between 1 to 6: "); int n2 = sc.nextInt();
+                System.out.println("*******************************************************************");
+                if(n2 == 1){
+                System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                System.out.println("*******************************************************************");
+                    this.fare11 = fare;
+                    this.fare21 = fare;
+                    this.fare31 = fare;
+                    this.fare41 = fare;
+                    this.fare51 = fare;
+                }
+                else if(n2 == 2){
+                    System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                    System.out.println("*******************************************************************");
+                    this.fare12 = fare;
+                    this.fare22 = fare;
+                    this.fare32 = fare;
+                    this.fare42 = fare;
+                    this.fare52 = fare;
+                }
+                else if(n2 == 3){
+                        System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                        System.out.println("*******************************************************************");
+                        this.fare13 = fare;
+                        this.fare23 = fare;
+                        this.fare33 = fare;
+                        this.fare43 = fare;
+                        this.fare53 = fare;
+                }
+                else if(n2 == 4){
+                    System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                    System.out.println("*******************************************************************");
+                    this.fare14 = fare;
+                    this.fare24 = fare;
+                    this.fare34 = fare;
+                    this.fare44 = fare;
+                    this.fare54 = fare;
+                }
+                else if(n2 == 5){
+                    System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                    System.out.println("*******************************************************************");
+                    this.fare15 = fare;
+                    this.fare25 = fare;
+                    this.fare35 = fare;
+                    this.fare45 = fare;
+                    this.fare55 = fare;
+                }
+                else if(n2 == 6){
+                    System.out.print("Please enter your choiced fare amount: "); int fare = sc.nextInt();
+                    System.out.println("*******************************************************************");
+                    this.fare16 = fare;
+                    this.fare26 = fare;
+                    this.fare36 = fare;
+                    this.fare46 = fare;
+                    this.fare56 = fare;
+                }
+                else if(n2 == 7) break;
+                    else{System.out.println("You enterd a wrong number. Please enter again");}
+                    System.out.println("*******************************************************************");
+            } // choice == 1 er if statement
+            
+            else if (choice == 2){
                 break;
             }else{
-              System.out.println("Please enter 1 to 4\n Otherwise it will not work");
+              System.out.println("please enter 1 or 2 ");
             }
-        }//for loops ends here
+        }    
     } //Admin_can_change_all_information
 }// class ends here
