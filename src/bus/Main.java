@@ -160,13 +160,14 @@ public class Main
                 }
                 else if( name_temp.equals("") && pass_temp.equals("") ){     // if name_temp and pass_temp remains null then it will registared
 
-                    name.add(userName);
-                    password.add(pass);
-                    System.out.print("Real name: "); String realname = sc.nextLine();     // Real name enter
-                    System.out.print("Phone: ");     String ph = sc.nextLine();           // Phone enter
+
+                    System.out.print("Real name: ");   String realname = sc.nextLine();     // Real name enter
+                    System.out.print("Phone: 01");     String ph = sc.nextLine();           // Phone enter
 
                     realName.add(realname);
                     phone.add(ph);
+                    name.add(userName);
+                    password.add(pass);
 
                     System.out.println("\n\t\t\t\t\t\t\tYou are registared\n");
 
