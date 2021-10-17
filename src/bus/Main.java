@@ -163,7 +163,7 @@ public class Main
 
                     System.out.print("Real name: "); 
                     String realname = sc.nextLine();     // Real name enter
-                    System.out.print("Phone: 01");     
+                    System.out.print("Phone (must be a valid num of 11 digit)  : 01");
                     String ph = sc.nextLine();           // Phone enter
                     
                     if(ph.length() == 9){
@@ -473,7 +473,7 @@ public class Main
                                     taka.add ( object_taka );
                                     Time.add ( object_time );
 
-                                    System.out.println("You seat is booked");
+                                    System.out.println("Your seat is booked");
                                 }
                                 else if(user_date==6){
                                     break;
