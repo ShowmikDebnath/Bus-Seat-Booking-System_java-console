@@ -19,19 +19,20 @@ public class Date2 extends Taka{
 
     public Date2(String date, int seat1, int seat2, int seat3, int seat4, int seat5, int seat6, int tsd, int tds, int tsc, int tcs, int tdc, int tcd
             , String time1, String time2, String time3, String time4, String time5, String time6){
-        System.out.println("\n**********Where You want to go:***********");
-        System.out.println("Bus available on "+date+ " are:");
-        System.out.println("1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- "+time1+" ---- "+tsd);
-        System.out.println("2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- "+time2+" ---- "+tsd);
-        System.out.println("3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- "+time3+" ---- "+tsd);
-        System.out.println("4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- "+time4+" ---- "+tsd);
-        System.out.println("5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- "+time5+" ---- "+tsd);
-        System.out.println("6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- "+time6+" ---- "+tsd);
-        System.out.println("******************************************\n");
+        //System.out.println("\n**********Where You want to go:***********");
+        System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\tBuses available on "+date+ " are:");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- "+time1+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- "+time2+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- "+time3+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- "+time4+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- "+time5+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- "+time6+" ---- "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t**********************************************************\n");
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number between 1 to 6 : ") ; int choice = sc.nextInt();
-        System.out.print("Tickets : ");
+        System.out.print("\t\t\t\t\t\t\t\t\t\t\t\t->\tEnter your choose: ");
+        int choice = sc.nextInt();
+        System.out.print("\t\t\t\t\t\t\t\t\t\t\t\t->\tHow many tickets do you need: ");
         seat_temp = sc.nextInt();
 
         Scanner input = new Scanner(System.in);
