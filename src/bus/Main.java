@@ -143,7 +143,13 @@ public class Main
             Login_display();        // choice sign up , log in , log out , exit
             //System.out.print("Press a number between 1 to 5: ");
             System.out.print("\t\t\t\t\t\t\t\t\t\t\t->\tEnter your chose (1-5): ");
-            int user = sc.nextInt();
+            int user = 0;
+            try{
+                user = sc.nextInt();
+            }catch(Exception e){
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t->\tPlease enter number");
+                break;
+            }
             System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t..........................................................................\n");
 
 
