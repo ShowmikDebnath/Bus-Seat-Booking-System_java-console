@@ -21,12 +21,13 @@ public class Date5 extends Taka{
             , String time1, String time2, String time3, String time4, String time5, String time6){
         //System.out.println("\n**********Where You want to go:***********");
         System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\tBuses available on "+date+ " are:");
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t1. Sylhet to Dhaka      --- "+(30 - seat1)+" ---- "+time1+" ---- "+tsd);
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t2. Dhaka to Sylhet      --- "+(30 - seat2)+" ---- "+time2+" ---- "+tsd);
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t3. Sylhet to Chittagong --- "+(30 - seat3)+" ---- "+time3+" ---- "+tsd);
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t4. Chittagong to Sylhet --- "+(30 - seat4)+" ---- "+time4+" ---- "+tsd);
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t5. Dhaka to Chittagong  --- "+(30 - seat5)+" ---- "+time5+" ---- "+tsd);
-        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t6. Chittagong to Dhaka  --- "+(30 - seat6)+" ---- "+time6+" ---- "+tsd);
+        System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t   Destination          --- Available Seat ---- time  ---- Fair\n");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t1. Sylhet to Dhaka                 "+(30 - seat1)+"          "+time1+"      "+tsd);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t2. Dhaka to Sylhet                 "+(30 - seat2)+"          "+time2+"      "+tds);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t3. Sylhet to Chittagong            "+(30 - seat3)+"          "+time3+"      "+tsc);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t4. Chittagong to Sylhet            "+(30 - seat4)+"          "+time4+"      "+tcs);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t5. Dhaka to Chittagong             "+(30 - seat5)+"          "+time5+"      "+tdc);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t6. Chittagong to Dhaka             "+(30 - seat6)+"          "+time6+"      "+tcd);
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t**********************************************************\n");
 
         Scanner sc = new Scanner(System.in);
